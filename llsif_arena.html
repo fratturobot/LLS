@@ -18,7 +18,7 @@
 
 <meta name="viewport" content="width=1000, initial-scale=1">
 
-<title>ライブ♪アリーナ テキスト集 | ラブライブ！ストレージ</title>
+<title data-localize="ARENA_SITE_TITLE">ライブ♪アリーナ テキスト集 | ラブライブ！ストレージ</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
 <link rel="stylesheet" href="main.css">
 <style><!--
@@ -196,28 +196,33 @@ div.note { /*注釈*/
 </head>
 <body class="RM">
 <header>
-	<h2 id="MainTitle">スクフェス ライブ♪アリーナ テキスト集</h2>
+	<h2 id="MainTitle" data-localize="ARENA_PAGE_TITLE">スクフェス ライブ♪アリーナ テキスト集</h2>
 </header>
 
 <section id="Foreword">
-	<h3 class="foreword">まえがき</h3>
-	<p>
-		ゲーム「ラブライブ！スクールアイドルフェスティバル」内で定期開催されていたイベント「ライブ♪アリーナ」のテキスト集です。
-	</p>
-	<p>
-		(2023/2/3) 私の知る範囲で、全てのテキストの掲載が完了。<br>
-		欠けているテキストの補完に協力していただいた皆様に感謝。
-	</p>
+	<h3 class="foreword" data-localize="FOREWORD_HEADER">まえがき</h3>
+	<div data-localize="ARENA_FOREWORD_INFO">
+		<p>
+			ゲーム「ラブライブ！スクールアイドルフェスティバル」内で定期開催されていたイベント「ライブ♪アリーナ」のテキスト集です。
+		</p>
+		<p>
+			(2023/2/3) 私の知る範囲で、全てのテキストの掲載が完了。<br>
+			欠けているテキストの補完に協力していただいた皆様に感謝。
+		</p>
+	</div>
 </section>
 
 <div id="RightMenu">
+	<div class="localize-wrapper">
+		<select id="LanguageSelector"></select>
+	</div>
 	<ul>
-		<li><strong>目次</strong></li>
+		<li><strong data-localize="CONTENTS">目次</strong></li>
 		<li><hr></li>
-		<li><a href="#Foreword">まえがき</a></li>
-		<li><a href="#StoryViewer">過去のテキスト</a></li>
-		<li><a href="#TimesAppear">キャラ別登場回数</a></li>
-		<li><a href="#History">更新履歴</a></li>
+		<li><a href="#Foreword" data-localize="FOREWORD_HEADER">まえがき</a></li>
+		<li><a href="#StoryViewer" data-localize="ARENA_STORY_HEADER">過去のテキスト</a></li>
+		<li><a href="#TimesAppear" data-localize="ARENA_SUMMARY_HEADER">キャラ別登場回数</a></li>
+		<li><a href="#History" data-localize="UPDATE">更新履歴</a></li>
 	</ul>
 </div>
 
@@ -229,26 +234,28 @@ div.note { /*注釈*/
 </div>
 
 <section id="StoryViewer">
-	<h3 class="muse">過去のテキスト</h3>
-	<p>以下のいずれかを行うことで、表示回を切り替えることができます。</p>
-	<ul>
-		<li>上部のタイトル部分のセレクトボックスで、表示したい回を選択する</li>
-		<li>上部の「前回」「次回」ボタンを押す</li>
-		<li>テキスト部分にフォーカスを当てた状態で、キーボードのカーソルキーの左右を押す</li>
-	</ul>
+	<h3 class="muse" data-localize="ARENA_STORY_HEADER">過去のテキスト</h3>
+	<div data-localize="ARENA_STORY_INFO">
+		<p>以下のいずれかを行うことで、表示回を切り替えることができます。</p>
+		<ul>
+			<li>上部のタイトル部分のセレクトボックスで、表示したい回を選択する</li>
+			<li>上部の「前回」「次回」ボタンを押す</li>
+			<li>テキスト部分にフォーカスを当てた状態で、キーボードのカーソルキーの左右を押す</li>
+		</ul>
+	</div>
 	
 	<div id="info-box">
 		<table id="info-table">
 			<tbody>
 				<tr>
-					<th id="ButtonLeft"  rowspan="2" onclick="false"><span style="font-size:40px">&#x2b05;</span><br>前回</th>
+					<th id="ButtonLeft" rowspan="2"><span style="font-size:40px">&#x2b05;</span><br><span data-localize="PREV">前回</span></th>
 					<th id="HeaderUpper">
 						<select id="select-box" onchange="WriteMessage()">
 						<optgroup id="sb-t1" label="本編テキスト"></optgroup>
 						<optgroup id="sb-t2" label="その他"></optgroup>
 						</select>
 					</th>
-					<th id="ButtonRight" rowspan="2" onclick="false"><span style="font-size:40px">&#x2b95;</span><br>次回</th>
+					<th id="ButtonRight" rowspan="2"><span style="font-size:40px">&#x2b95;</span><br><span data-localize="NEXT">次回</span></th>
 				</tr>
 				<tr>
 					<th><span id="sub"></span></th>
@@ -264,8 +271,8 @@ div.note { /*注釈*/
 </section>
 
 <section id="TimesAppear">
-	<h3 class="aqours">キャラ別登場回数</h3>
-	<p>
+	<h3 class="aqours" data-localize="ARENA_SUMMARY_HEADER">キャラ別登場回数</h3>
+	<p data-localize="ARENA_SUMMARY_INFO">
 		各キャラクターの、ステージ1〜30のスペシャルセッションで登場した回数です。<br>
 	</p>
 	<div id="Summary" class="FixedHeader">
@@ -273,9 +280,9 @@ div.note { /*注釈*/
 			<thead>
 				<tr>
 					<th></th>
-					<th style="width: 130px;">キャラクター</th>
-					<th style="width: 75px;">登場回数</th>
-					<th>登場回</th>
+					<th style="width: 130px;" data-localize="MEMBER">キャラクター</th>
+					<th style="width: 75px;" data-localize="APPEAR_COUNT">登場回数</th>
+					<th data-localize="APPEAR">登場回</th>
 				</tr>
 			</thead>
 			<tbody id="Summary-Contents"></tbody>
@@ -284,10 +291,16 @@ div.note { /*注釈*/
 </section>
 
 <section id="History">
-<h3 class="niji">更新履歴（テキスト追加以外で）</h3>
-<p>下のボックス内の、色つきの日付の行をクリックすると展開/折りたたみされます。</p>
+<h3 class="niji" data-localize="UPDATE_NOTEXT">更新履歴（テキスト追加以外で）</h3>
+<p data-localize="UPDATE_INFO">下のボックス内の、色つきの日付の行をクリックすると展開/折りたたみされます。</p>
 <div id="history2">
 	<details open>
+		<summary><span class="date">2023/04/15</span></summary>
+		<div>
+			<span class="new"></span>Added English text for rounds 8-29
+		</div>
+	</details>
+	<details >
 		<summary><span class="date">2023/03/18</span></summary>
 		<div>
 			<span class="new"></span>目次を追加
@@ -354,9 +367,10 @@ div.note { /*注釈*/
 </section>
 
 <nav>
-<p><a id="BackToMain" href="index.html">トップページに戻る。</a></p>
+<p><a id="BackToMain" href="index.html" data-localize="BACK_TO_MAIN">トップページに戻る。</a></p>
 </nav>
 
+<script src="data/localization.js"></script>
 <script><!--
 //■デバッグモード判定
 let isDebugMode = false;
@@ -399,8 +413,14 @@ loadScript("data/arena.js", function() {
 	const TimeOutputStart = performance.now();
 	
 	InitializeSelectBox();
-	WriteMessage(0);
+	WriteMessage();
 	WriteSummary();
+
+	document.addEventListener('SetLanguage', (e) => {
+		RefreshSelectBox();
+		WriteMessage();
+		WriteSummary();
+	});
 	
 	//◆「Now Loading...」解除
 	document.getElementById("Loading").style.display = "none";

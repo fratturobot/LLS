@@ -177,3 +177,12 @@ span.new {
 	height: 16px;
 	margin-right: 4px;
 }
+
+.localize-wrapper {
+	position: fixed;
+	top: 0;
+	right: 0;
+	border-radius: 6px;
+	padding: 3px 5px 5px;
+	margin: 5px;
+}

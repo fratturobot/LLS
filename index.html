@@ -18,7 +18,7 @@
 
 <meta name="viewport" content="width=900">
 
-<title>ラブライブ！ストレージ</title>
+<title data-localize="SITE_TITLE">ラブライブ！ストレージ</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
 <link rel="stylesheet" href="main.css">
 <style><!--
@@ -71,28 +71,26 @@
 	opacity: 0.4;
 }
 
-#Menu td > strong {
+#Menu td strong {
 	font-size: 130%;
 	color: #666;
 }
 
-#Menu td > hr {
+#Menu td hr {
 	width: 90%;
 	height: 0px;
 	border-width: 0 0 3px 0;
 }
 
 #Menu td > a {
-	position: absolute;
-	top: 0;
-	left: 0;
+	display: block;
 	width: 100%;
 	height: 100%;
-	text-indent: 0;
-	z-index: 2;
+	color: inherit;
+	text-decoration: initial;
 }
 
-#Menu th {
+#Menu th, .localize-wrapper {
 	background: linear-gradient(0deg, rgba(208, 224, 192, 0.9) 0%, rgba(224, 240, 208, 0.9) 100%);
 	border-style: solid;
 	border-color: #ab8;
@@ -121,6 +119,16 @@
 
 #Menu tr.separator {
 	height: 20px;
+}
+
+.no-translate::after {
+	content: 'Not Yet Translated';
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+	background-color: #0002;
+	font-weight: bold;
 }
 
 /* 色指定。背景色はスクフェス、線の色はスクスタ準拠 */
@@ -182,42 +190,46 @@
 
 <nav id="Menu">
 <table>
-<caption style="font-size: 160%; color:#666">
+<caption style="font-size: 160%; color:#666" data-localize="CHOOSE_PANEL">
 	↓ 見たいパネルを選んでね ↓
 </caption>
 <tbody>
 	<!-- 便利系 色：μ's -->
 	<tr>
-		<th class="left" rowspan="2">総合</th>
+		<th class="left" rowspan="2" data-localize="GENERAL">総合</th>
 		<td class="col_Ms01">
-			<strong>メンバーカラー<br>まとめ</strong>
-			<hr class="col_Ms01">
-			各キャラクターのメンバーカラーを、色々な媒体から集めてみました。
-			<a href="color.html"></a>
+			<a href="color.html">
+				<strong data-localize="MEMBER_COLOR_TITLE">メンバーカラー<br>まとめ</strong>
+				<hr class="col_Ms01">
+				<span data-localize="MEMBER_COLOR_DESC">各キャラクターのメンバーカラーを、色々な媒体から集めてみました。</span>
+			</a>
 		</td>
 
 		<td class="col_Ms02">
-			<strong>虹ヶ咲学園<br>マンスリーランキング</strong>
-			<hr class="col_Ms02">
-			毎月行われていたランキングの結果を、集計・分析してみました。
-			<a href="niji_ranking.html"></a>
+			<a href="niji_ranking.html">
+				<strong data-localize="NIJI_RANKING_TITLE">虹ヶ咲学園<br>マンスリーランキング</strong>
+				<hr class="col_Ms02">
+				<span data-localize="NIJI_RANKING_DESC">毎月行われていたランキングの結果を、集計・分析してみました。</span>
+			</a>
 		</td>
 
 		<td class="col_Ms03">
-			<strong>虹ヶ咲学園<br>マンスリーアンケート</strong>
-			<hr class="col_Ms03">
-			毎月行われているアンケートの集計や、便利リンクを掲載しています。
-			<a href="niji_enquete.html"></a>
+			<a href="niji_enquete.html">
+				<strong data-localize="NIJI_QUESTION_TITLE">虹ヶ咲学園<br>マンスリーアンケート</strong>
+				<hr class="col_Ms03">
+				<span data-localize="NIJI_QUESTION_DESC">毎月行われているアンケートの集計や、便利リンクを掲載しています。</span>
+			</a>
 		</td>
 		<th class="right" rowspan="2"></th>
 	</tr>
 	
 	<tr>
 		<td class="col_Ms04">
-			<strong>キャラソート</strong>
-			<hr class="col_Ms04">
-			スクールアイドル、ユニット、キャスト等を好きな順に並べ替えてみよう。ツイートボタンも付いてるよ。
-			<a href="sort.html"></a>
+			<a href="sort.html">
+				<strong data-localize="CHAR_SORT_TITLE">キャラソート</strong>
+				<hr class="col_Ms04">
+				<span data-localize="CHAR_SORT_DESC">スクールアイドル、ユニット、キャスト等を好きな順に並べ替えてみよう。ツイートボタンも付いてるよ。</span>
+			</a>
 		</td>
 
 		<td class="col_Ms05 closed">
@@ -247,26 +259,29 @@
 
 	<!-- スクフェス関連 色:Aqours -->
 	<tr>
-		<th class="left" rowspan="1">スクフェス</th>
+		<th class="left" rowspan="1" data-localize="SIF">スクフェス</th>
 		<td class="col_Aq01">
-			<strong>ライブ♪アリーナ<br>テキスト集</strong>
-			<hr class="col_Aq01">
-			今までに開催された、ライブ♪アリーナのテキストを保管しています。
-			<a href="llsif_arena.html"></a>
+			<a href="llsif_arena.html">
+				<strong data-localize="LIVE_ARENA_TITLE">ライブ♪アリーナ<br>テキスト集</strong>
+				<hr class="col_Aq01">
+				<span data-localize="LIVE_ARENA_DESC">今までに開催された、ライブ♪アリーナのテキストを保管しています。</span>
+			</a>
 		</td>
 
 		<td class="col_Aq02">
-			<strong>ブーストリピート用<br>部員一覧</strong>
-			<hr class="col_Aq02">
-			スクフェスのブーストリピート編成で使える部員の一覧です。<br>（別サイトへ移動します）
-			<a href="https://docs.google.com/spreadsheets/d/1MG2bHOUqgWbyknPKACTNzFVAx7iDa0T72VRoTUeAaIw" target="_blank" rel="noopener noreferrer"></a>
+			<a href="https://docs.google.com/spreadsheets/d/1MG2bHOUqgWbyknPKACTNzFVAx7iDa0T72VRoTUeAaIw" target="_blank" rel="noopener noreferrer">
+				<strong data-localize="BOOST_TITLE">ブーストリピート用<br>部員一覧</strong>
+				<hr class="col_Aq02">
+				<span data-localize="BOOST_DESC">スクフェスのブーストリピート編成で使える部員の一覧です。<br>（別サイトへ移動します）</span>
+			</a>
 		</td>
 		
 		<td class="col_Aq03">
-			<strong>転入生<br>データベース</strong>
-			<hr class="col_Aq03">
-			もう見られない転入生の情報やサイドストーリーを補完しています。現在テスト公開中。
-			<a href="llsif_n.html"></a>
+			<a href="llsif_n.html">
+				<strong data-localize="TRANSFER_STUDENT_TITLE">転入生<br>データベース</strong>
+				<hr class="col_Aq03">
+				<span data-localize="TRANSFER_STUDENT_DESC">もう見られない転入生の情報やサイドストーリーを補完しています。現在テスト公開中。</span>
+			</a>
 		</td>
 		<th class="right" rowspan="1"></th>
 	</tr>
@@ -303,43 +318,48 @@
 	
 	<!-- スクスタ 色：虹ヶ咲 -->
 	<tr>
-		<th class="left" rowspan="2">スクスタ</th>
+		<th class="left" rowspan="2" data-localize="SIFAS">スクスタ</th>
 		<td class="col_Nj01">
-			<strong>呼称表</strong>
-			<hr class="col_Nj01">
-			３０人のスクールアイドルとあなたは、お互いのことをどう呼び合っでいる？
-			<a href="call.html"></a>
+			<a href="call.html">
+				<strong data-localize="NAME_TABLE_HEADER">呼称表</strong>
+				<hr class="col_Nj01">
+				<span data-localize="NAME_TABLE_DESC">３０人のスクールアイドルとあなたは、お互いのことをどう呼び合っでいる？</span>
+			</a>
 		</td>
 
 		<td class="col_Nj02">
-			<strong>カード実装状況</strong>
-			<hr class="col_Nj02">
-			スクスタにおいて、キャラ別のカードがどれくらいあるかを確認できます。
-			<a href="sifas_card.html"></a>
+			<a href="sifas_card.html">
+				<strong data-localize="CARD_IMPL_HEADER">カード実装状況</strong>
+				<hr class="col_Nj02">
+				<span data-localize="CARD_IMPL_DESC">スクスタにおいて、キャラ別のカードがどれくらいあるかを確認できます。</span>
+			</a>
 		</td>
 
 		<td class="col_Nj03">
-			<strong>過去のイベント<br>まとめ</strong>
-			<hr class="col_Nj03">
-			スクスタのイベントストーリーで開催されたイベント、および共演したペアのまとめです。
-			<a href="sifas_event.html"></a>
+			<a href="sifas_event.html">
+				<strong data-localize="EVENT_SUMMARY_HEADER">過去のイベント<br>まとめ</strong>
+				<hr class="col_Nj03">
+				<span data-localize="EVENT_SUMMARY_DESC">スクスタのイベントストーリーで開催されたイベント、および共演したペアのまとめです。</span>
+			</a>
 		</td>
 		<th class="right" rowspan="2"></th>
 	</tr>
 
 	<tr>
 		<td class="col_Nj04">
-			<strong>ストーリー便覧</strong>
-			<hr class="col_Nj04">
-			スクスタの各種ストーリーのあらすじと登場キャラを、ひとまとめにしてみました。
-			<a href="sifas_story.html"></a>
+			<a href="sifas_story.html">
+				<strong data-localize="STORY_SUMMARY_HEADER">ストーリー便覧</strong>
+				<hr class="col_Nj04">
+				<span data-localize="STORY_SUMMARY_DESC">スクスタの各種ストーリーのあらすじと登場キャラを、ひとまとめにしてみました。</span>
+			</a>
 		</td>
 
 		<td class="col_Nj05">
-			<strong>毎日劇場<br>データベース</strong>
-			<hr class="col_Nj05">
-			スクフェスの毎日劇場の一覧です。どんなストーリーがある？
-			<a href="sifas_theater.html"></a>
+			<a href="sifas_theater.html">
+				<strong data-localize="DAILY_THEATRE_HEADER">毎日劇場<br>データベース</strong>
+				<hr class="col_Nj05">
+				<span data-localize="DAILY_THEATRE_DESC">スクフェスの毎日劇場の一覧です。どんなストーリーがある？</span>
+			</a>
 		</td>
 
 		<td class="col_Nj06 closed">
@@ -378,12 +398,34 @@
 </table>
 </nav>
 
-<address style="color:#666; margin-bottom: 30px;">
+<address style="color:#666; margin-bottom: 30px;" data-localize="AUTHOR_NOTE">
 	ご意見・データの間違い報告などは<a href="https://twitter.com/ratius55">作者のTwitterまで</a>
 </address>
 
+<div class="localize-wrapper">
+	<select id="LanguageSelector"></select>
+</div>
+
+<script src="data/localization.js"></script>
 <script><!--
 	document.getElementById('caution').style.display = 'none';
+
+	function flagMissingTranslations() {
+		document.querySelectorAll('#Menu td > a').forEach(panel => {
+			if(!Localization.TRANSLATED_PAGES[panel.getAttribute('href')]) {
+				let noTranslate = document.createElement('div');
+				noTranslate.classList.add('no-translate');
+				panel.appendChild(noTranslate);
+			}
+		});
+	}
+
+	if (lang_select)
+		flagMissingTranslations();
+
+	document.addEventListener('SetLanguage', () => {
+		lang_select ? flagMissingTranslations() : document.querySelectorAll('.no-translate').forEach(x => x.remove())
+	});
 	
 	//■デバック用
 	if(location.search === "?debug") {
