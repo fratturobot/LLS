@@ -77,8 +77,8 @@ const Localization = {
     'Transfer Student<br>Database'
   ],
   'TRANSFER_STUDENT_DESC': [
-    'もう見られない転入生の情報やサイドストーリーを補完しています。現在テスト公開中。',
-    'Transfer student information and side stories.  Development in progress.'
+    '今はもう見られない、転入生の情報やサイドストーリーを補完しています。',
+    'Information and side stories of the transfer students (N Girls).'
   ],
   'SIFAS': [
     'スクスタ',
@@ -121,7 +121,7 @@ const Localization = {
     'Daily Theatre'
   ],
   'DAILY_THEATRE_DESC': [
-    'スクフェスの毎日劇場の一覧です。どんなストーリーがある？',
+    'スクスタの毎日劇場の一覧です。どんなストーリーが配信されていた？',
     'List of Daily Theatre episodes.'
   ],
   'AUTHOR_NOTE': [
