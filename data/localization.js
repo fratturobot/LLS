@@ -16,116 +16,165 @@ const Localization = {
     '↓ 見たいパネルを選んでね ↓',
     '↓ Select a Panel ↓'
   ],
-  'GENERAL': [
+  'SMARTPHONE_WARNING': [
+    'ボックスの右上に赤い円が表示されている場合、リンク先のページがスマートフォンでの閲覧に最適化されていない可能性があります。',
+    'Pages marked with red circles have not been optimized for smartphone display.  Those with yellow circles have not been translated.'
+  ],
+  /*'GENERAL': [
     '総合',
     'GENERAL'
+  ],*/
+  'GENERAL_SERIES': [
+    'ラブライブ！シリーズ総合',
+    'Love Live! Series'
   ],
   'MEMBER_COLOR_TITLE': [
-    'メンバーカラー<br>まとめ',
-    'Member Color<br>Summary'
+    'メンバーカラー<wbr>まとめ',
+    'Member Color Summary'
   ],
   'MEMBER_COLOR_DESC': [
-    '各キャラクターのメンバーカラーを、色々な媒体から集めてみました。',
-    'Collected image colors of each character from various media.'
-  ],
-  'NIJI_RANKING_TITLE': [
-    '虹ヶ咲学園<br>マンスリーランキング',
-    'Nijigasaki<br>Monthly Ranking'
-  ],
-  'NIJI_RANKING_DESC': [
-    '毎月行われていたランキングの結果を、集計・分析してみました。',
-    'The results of the monthly ranking, tabulated and analyzed.'
-  ],
-  'NIJI_QUESTION_TITLE': [
-    '虹ヶ咲学園<br>マンスリーアンケート',
-    'Nijigasaki<br>Monthly Questionaire'
-  ],
-  'NIJI_QUESTION_DESC': [
-    '毎月行われているアンケートの集計や、便利リンクを掲載しています。',
-    'Compilation of the monthly survey results, with links to each one.'
+    'スクールアイドル達のメンバーカラーを、色々な媒体から集めてみました。',
+    'Image colors of each character as they appear in various official sources.'
   ],
   'CHAR_SORT_TITLE': [
     'キャラソート',
     'Character Sorter'
   ],
   'CHAR_SORT_DESC': [
-    'スクールアイドル、ユニット、キャスト等を好きな順に並べ替えてみよう。ツイートボタンも付いてるよ。',
-    'Sort School Idols, Subunits, Seiyuu, etc. to order your favorites.  You can tweet your results as well.'
+    'スクールアイドル、ユニット、キャスト等を好きな順に並べ替えてみよう。',
+    'Sort School Idols, Subunits, Seiyuu, etc. to order your favorites.'
   ],
-  'SIF': [
-    'キャラソート',
-    'SIF'
+  'CALENDAR_TITLE': [
+    '誕生日カレンダー',
+    'Birthday Calendar'
+  ],
+  'CALENDAR_DESC': [
+    'スクールアイドルやキャストの誕生日を確認できます。スクフェスの転入生にも対応。',
+    'Birthdays of the School Idols and Seiyuu, including transfer students.'
+  ],
+  'NIJI_SERIES': [
+    '虹ヶ咲学園スクールアイドル同好会',
+    'Nijigasaki High School Idol Club'
+  ],
+  'NIJI_RANKING_TITLE': [
+    '虹ヶ咲学園 <wbr>マンスリーランキング',
+    'Nijigasaki Monthly Ranking'
+  ],
+  'NIJI_RANKING_DESC': [
+    '毎月行われていたランキングの結果を、集計・分析してみました。',
+    'Results of the monthly ranking votes, tabulated and analyzed.'
+  ],
+  'NIJI_QUESTION_TITLE': [
+    '虹ヶ咲学園 <wbr>マンスリーアンケート',
+    'Nijigasaki Monthly Questionaire'
+  ],
+  'NIJI_QUESTION_DESC': [
+    '毎月行われていたアンケートの集計や、便利リンクを掲載しています。',
+    'Compilation of the monthly survey results, with links to each one.'
+  ],
+  'HASU_SERIES': [
+    'Link！Like！ラブライブ！',
+    'Link! Like! Love Live!'
+  ],
+  'HASU_CONNECT_TITLE': [
+    'スクールアイドル<wbr>コネクト<wbr>まとめ',
+    'School Idol Connect Summary'
+  ],
+  'HASU_CONNECT_DESC': [
+    'アプリ内で配信されたWith×MEETS、Fes×LIVEのまとめです。',
+    'Summary of With×MEETS and Fes×LIVE results from the app.'
+  ],
+  'SIF2_SERIES': [
+    'スクフェス2 MIRACLE LIVE!',
+    'SIF 2: Miracle Live!'
+  ],
+  'SIF2_THEATER_TITLE': [
+    'スクフェス2 <wbr>毎日劇場アーカイブ',
+    'SIF2 Daily Theatre Archive'
+  ],
+  'SIF2_THEATER_DESC': [
+    'スクフェス2の毎日劇場の一覧です。本文も収録。',
+    'Collection of SIF2 Daily Theatre episodes.'
+  ],
+  'SIF_SERIES': [
+    'スクフェス1',
+    'SIF 1'
   ],
   'LIVE_ARENA_TITLE': [
-    'ライブ♪アリーナ<br>テキスト集',
-    'Live♪Arena<br>Story Collection'
+    'ライブ♪アリーナ <wbr>まとめ',
+    'Live♪Arena Stories'
   ],
   'LIVE_ARENA_DESC': [
     '今までに開催された、ライブ♪アリーナのテキストを保管しています。',
     'Story data of the Live♪Arena events that have been held so far'
   ],
-  'BOOST_TITLE': [
-    'ブーストリピート用<br>部員一覧',
-    'Boost Repeat Skill<br>Member List'
-  ],
-  'BOOST_DESC': [
-    'スクフェスのブーストリピート編成で使える部員の一覧です。<br>（別サイトへ移動します）',
-    'Members whose boost repeat skills can be used together.<br>(opens in a new tab)'
-  ],
   'TRANSFER_STUDENT_TITLE': [
-    '転入生<br>データベース',
-    'Transfer Student<br>Database'
+    'スクフェス <wbr>転入生データベース',
+    'Transfer Student Database'
   ],
   'TRANSFER_STUDENT_DESC': [
     '今はもう見られない、転入生の情報やサイドストーリーを補完しています。',
     'Information and side stories of the transfer students (N Girls).'
   ],
-  'SIFAS': [
-    'スクスタ',
-    'SIF:AS'
+  'SIFAS_SERIES': [
+    'スクフェスALL STARS',
+    'SIF All Stars'
   ],
-  'NAME_TABLE_HEADER': [
-    '呼称表',
+  'NAME_TABLE_TITLE': [
+    'スクスタ <wbr>呼称表',
     'Names, Nicknames & Honorifics'
   ],
   'NAME_TABLE_DESC': [
     '３０人のスクールアイドルとあなたは、お互いのことをどう呼び合っでいる？',
-    'How do the 30 School Idols (and you) refer to each other?'
+    'How did the 30 School Idols (and you) refer to each other?'
   ],
-  'CARD_IMPL_HEADER': [
-    'カード実装状況',
-    'Card Statistics'
+  'CARD_IMPL_TITLE': [
+    'スクスタ <wbr>実装カード一覧',
+    'SIFAS Card List'
   ],
   'CARD_IMPL_DESC': [
-    'スクスタにおいて、キャラ別のカードがどれくらいあるかを確認できます。',
-    'How many cards has each character gotten in All Stars?'
+    'スクスタに実装されたカードがどれくらいあったかを確認できます。',
+    'Details of every character card in All Stars'
   ],
-  'EVENT_SUMMARY_HEADER': [
-    '過去のイベント<br>まとめ',
-    'Event Database'
+  'EVENT_SUMMARY_TITLE': [
+    'スクスタ <wbr>過去のイベント',
+    'SIFAS Event Archive'
   ],
   'EVENT_SUMMARY_DESC': [
     'スクスタのイベントストーリーで開催されたイベント、および共演したペアのまとめです。',
     'Data on past events, including featured UR and SR units.'
   ],
-  'STORY_SUMMARY_HEADER': [
-    'ストーリー便覧',
-    'Story Summaries'
+  'STORY_SUMMARY_TITLE': [
+    'スクスタ <wbr>ストーリー便覧',
+    'SIFAS Story Summaries'
   ],
   'STORY_SUMMARY_DESC': [
     'スクスタの各種ストーリーのあらすじと登場キャラを、ひとまとめにしてみました。',
     'Synopses of the story chapters and which characters appeared therein.'
   ],
-  'DAILY_THEATRE_HEADER': [
-    '毎日劇場<br>データベース',
-    'Daily Theatre'
+  'DAILY_THEATRE_TITLE': [
+    '毎日劇場<wbr>データベース',
+    'SIFAS Daily Theatre'
   ],
   'DAILY_THEATRE_DESC': [
-    'スクスタの毎日劇場の一覧です。どんなストーリーが配信されていた？',
-    'List of Daily Theatre episodes.'
+    'スクスタの毎日劇場の一覧です。グループを超えた掛け合いをお楽しみあれ！',
+    'List of Daily Theatre episodes.  Enjoy the cross-generation chats!'
+  ],
+  'SYSTEM_SERIES': [
+    'その他',
+    'Others'
+  ],
+  'LINKS_TITLE': [
+    'リンク集',
+    'External Links'
+  ],
+  'LINKS_DESC': [
+    '公式・非公式問わず、ラブライブ！関連の有用なWebサイトを集めました。',
+    'Offical and community websites dedicated to the Love Live! series'
   ],
   'AUTHOR_NOTE': [
-    'ご意見・データの間違い報告などは<a href="https://twitter.com/ratius55">作者のTwitterまで</a>',
+    `ページ作成：らてぃ(@ratius55)<br>
+\tご意見・不具合報告・データの間違い報告などは<a href="https://twitter.com/ratius55" target="_blank" rel="noopener noreferrer" title="作者のX">作者のX</a>まで`,
     'Original site developed by <a href="https://twitter.com/ratius55">ratius</a><br>For issues with the translated version, contact me <a href="https://twitter.com/lcheeseboy">on Twitter</a>'
   ],
   //LIVE ARENA
@@ -178,6 +227,14 @@ const Localization = {
   'PREV': [
     '前回',
     'Previous'
+  ],
+  'ARENA_MAIN_GROUP': [
+    '本編テキスト',
+    'Main Stories'
+  ],
+  'ARENA_OTHER_GROUP': [
+    'その他',
+    'Other Messages'
   ],
   'NEXT': [
     '次回',
@@ -259,15 +316,24 @@ function setLang(lang) {
   document.dispatchEvent(langEvent);
 }
 
-
+var firstTime = true;
 function localizePage() {
   const localizedElements = document.querySelectorAll('[data-localize]');
   localizedElements.forEach(element => {
     const key = element.dataset.localize;
     if(Localization[key] && Localization[key][lang_select]) {
-      element.innerHTML = Localization[key][lang_select];
+      const locVal = Localization[key][lang_select];
+      if(firstTime && lang_select === 0 && element.innerHTML.trim() !== locVal) {
+        console.log('Localization data mismatch on key: ' + key);
+      }
+      if(element.dataset.localizeAttr) {
+        element.attributes[element.dataset.localizeAttr].value = locVal;
+      } else {
+        element.innerHTML = locVal;
+      }
     }
-  })
+  });
+  firstTime = false;
 }
 
 // init language selector
