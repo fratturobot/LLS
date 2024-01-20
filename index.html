@@ -440,13 +440,12 @@ h2 {
 		});
 	}
 
-	function updateColTitles() {
+	function updateMenuContent() {
 		document.querySelectorAll('.menu-content').forEach(c => {
 			let colLabels;
 			switch(c.classList[1]) {
 				case 'col-Series':
 					colLabels = Localization['GENERAL_SERIES'];
-					break;
 					break;
 				case 'col-Niji':
 					colLabels = Localization['NIJI_SERIES'];
@@ -472,16 +471,20 @@ h2 {
 			}
 			c.querySelector('.menu-content-label').textContent = colLabels[lang_select];
 		});
+
+		document.querySelectorAll('.menu-container a').forEach(menuLink => {
+			menuLink.title = menuLink.querySelector('h3').innerText;
+		});
 	}
 
 	if (lang_select) {
 		flagMissingTranslations();
-		updateColTitles();
+		updateMenuContent();
 	}
 
 	document.addEventListener('SetLanguage', () => {
 		lang_select ? flagMissingTranslations() : document.querySelectorAll('.content-notrans').forEach(x => x.classList.remove('content-notrans'));
-		updateColTitles();
+		updateMenuContent();
 	});
 	
 	//■デバック用

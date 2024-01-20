@@ -95,6 +95,9 @@ h3:before {
 	display: block;
 	padding: 2px 0px;
 }
+.right-menu .localize-wrapper {
+	float: right;
+}
 /* ■スマートフォン向けレイアウト */
 @media screen and (max-width: 599px) {
 	.pc-only {

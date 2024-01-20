@@ -19,7 +19,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e50080">
 
-<title>スクフェス 転入生データベース | ラブライブ！ストレージ</title>
+<title data-localize="TRANSFER_SITE_TITLE">スクフェス 転入生データベース | ラブライブ！ストレージ</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
 <link rel="stylesheet" href="main_gen2.css">
 <style><!--
@@ -71,6 +71,10 @@ span.jump {
 	background-color: #fde;
 	border: 2px solid #978;
 	border-radius: 4px;
+}
+
+span.jump.active {
+	border-color: #f4a;
 }
 
 /*プロフィール*/
@@ -163,7 +167,7 @@ span.jump {
 	.text-story {
 		background-color: #fde;
 		width: 670px;
-		height: 120px;
+		min-height: 120px;
 		margin: 10px;
 		position: relative;
 		border-style: solid;
@@ -179,8 +183,9 @@ span.jump {
 	.text {
 		display: inline-block;
 		width: 550px;
-		height: 110px;
-		position: absolute;
+		min-height: 110px;
+		padding: 10px 0px;
+		position: relative;
 		top: 5px; 
 		left: 110px;
 		margin: 0;
@@ -188,26 +193,30 @@ span.jump {
 	}
 }
 --></style>
+<script src="data/localization.js" defer></script>
 <script src="data/llsif-n.js" defer></script>
 </head>
 <body class="left">
 <main>
 	<header>
-		<h1 id="TitleName">スクフェス 転入生データベース</h1>
+		<h1 id="TitleName" data-localize="TRANSFER_PAGE_TITLE">スクフェス 転入生データベース</h1>
 		<nav class="right-menu">
+			<div class="localize-wrapper">
+				<select id="LanguageSelector"></select>
+			</div>
 			<ul>
-				<li><strong>目次</strong></li>
+				<li><strong data-localize="CONTENTS">目次</strong></li>
 				<li><hr></li>
-				<li><a href="#Summary">概要</a></li>
-				<li><a href="#Viewer">転入生データベース</a></li>
-				<li><a href="#History">更新履歴</a></li>
+				<li><a href="#Summary" data-localize="SUMMARY_HEADER">概要</a></li>
+				<li><a href="#Viewer" data-localize="VIEWER">転入生データベース</a></li>
+				<li><a href="#History" data-localize="UPDATE">更新履歴</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<section id="Summary">
-		<h2>概要</h2>
-		<p>
+		<h2 data-localize="SUMMARY_HEADER">概要</h2>
+		<p data-localize="TRANSFER_FOREWORD_INFO">
 			「ラブライブ!スクールアイドルフェスティバル」で配信された転入生の各種テキストのまとめです。<br>
 			桜坂しずく、近江彼方、エマ・ヴェルデのカードは、転入生として扱われているカード、<br>
 			及び「キラキラ☆転入生フェスティバル」SSRのみ掲載します。
@@ -215,14 +224,14 @@ span.jump {
 	</section>
 
 	<section id="Viewer">
-		<h2>転入生データベース</h2>
-		<p>プルダウンメニューから転入生を選ぶと、下部にボタンが表示されます。<br>
+		<h2 data-localize="VIEWER">転入生データベース</h2>
+		<p data-localize="VIEWER_INFO">プルダウンメニューから転入生を選ぶと、下部にボタンが表示されます。<br>
 		そのボタンを押すことで情報を見ることができます。</p>
 		<div>
 			<div id="PullDown-Container">
-				<label for="PullDownMenu">転入生</label>
+				<label for="PullDownMenu" data-localize="VIEWER_MENU">転入生</label>
 				<select id="PullDownMenu" onChange="DrawButtons(this.value)">
-					<option value="">(選択)</option>
+					<option value="-1" data-localize="TRANSFER_SELECT_DEFAULT">(選択)</option>
 				</select>
 			</div>
 			<div id="ButtonField"></div>
@@ -235,10 +244,16 @@ span.jump {
 	</section>
 
 	<section id="History">
-		<h2>更新履歴</h2>
-		<p>下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
+		<h2 data-localize="UPDATE">更新履歴</h2>
+		<p data-localize="UPDATE_INFO">下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
 		<div class="history-container">
 			<details open>
+				<summary class="important"><span class="date">2024/01/15</span></summary>
+				<div>
+					<span class="icon-new"></span>EN translation for page, idol data.
+				</div>
+			</details>
+			<details>
 				<summary class="important"><span class="date">2023/12/28</span></summary>
 				<div>
 					<span class="icon-new"></span>CSSをアップデート
@@ -273,7 +288,7 @@ span.jump {
 
 	<footer>
 		<nav>
-			<a id="BackToMain" href="index.html">トップページに戻る。</a>
+			<a id="BackToMain" href="index.html" data-localize="BACK_TO_MAIN">トップページに戻る。</a>
 		</nav>
 	</footer>
 </main>

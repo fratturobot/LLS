@@ -1,4 +1,7 @@
 const Localization = {
+  'get': function(label) {
+    return Localization[label][lang_select];
+  },
   'LANG_CODE': [
     'JP',
     'EN'
@@ -175,20 +178,41 @@ const Localization = {
   'AUTHOR_NOTE': [
     `ページ作成：らてぃ(@ratius55)<br>
 \tご意見・不具合報告・データの間違い報告などは<a href="https://twitter.com/ratius55" target="_blank" rel="noopener noreferrer" title="作者のX">作者のX</a>まで`,
-    'Original site developed by <a href="https://twitter.com/ratius55">ratius</a><br>For issues with the translated version, contact me <a href="https://twitter.com/lcheeseboy">on Twitter</a>'
+    'Original site developed by <a href="https://twitter.com/ratius55">ratius</a><br>For issues with the translated version, contact <a href="https://twitter.com/lcheeseboy">@Lcheeseboy on Twitter</a>'
   ],
-  //LIVE ARENA
+  //COMMON PAGE ITEMS
   'CONTENTS': [
     '目次',
     'Contents'
   ],
-  'ARENA_PAGE_TITLE': [
-    'ライブ♪アリーナ テキスト集',
-    'Live♪Arena Story Collection'
-  ],
   'FOREWORD_HEADER': [
     'まえがき',
     'Foreword'
+  ],
+  'SUMMARY_HEADER': [
+    '概要',
+    'Summary'
+  ],
+  'UPDATE': [
+    '更新履歴',
+    'Update History'
+  ],
+  'UPDATE_NOTEXT': [
+    '更新履歴（テキスト追加以外で）',
+    'Update History (other than adding text)'
+  ],
+  'UPDATE_INFO': [
+    '下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。',
+    'Click each row to display more information.'
+  ],
+  'BACK_TO_MAIN': [
+    'トップページに戻る。',
+    'Return to Homepage'
+  ],
+  //LIVE ARENA
+  'ARENA_PAGE_TITLE': [
+    'ライブ♪アリーナ テキスト集',
+    'Live♪Arena Story Collection'
   ],
   'ARENA_FOREWORD_INFO': [
     `<p>
@@ -260,21 +284,74 @@ const Localization = {
     '登場回',
     'Appeared in Rounds'
   ],
-  'UPDATE': [
-    '更新履歴',
-    'Update History'
+  // TRANSFER STUDENTS
+  'TRANSFER_PAGE_TITLE': [
+    'スクフェス 転入生データベース',
+    'Transfer Student Database'
   ],
-  'UPDATE_NOTEXT': [
-    '更新履歴（テキスト追加以外で）',
-    'Update History (other than adding text)'
+  'TRANSFER_FOREWORD_INFO': [
+    `「ラブライブ!スクールアイドルフェスティバル」で配信された転入生の各種テキストのまとめです。<br>
+    桜坂しずく、近江彼方、エマ・ヴェルデのカードは、転入生として扱われているカード、<br>
+    及び「キラキラ☆転入生フェスティバル」SSRのみ掲載します。`,
+    `Collection of profile data & side stories of the LLSIF Transfer Students.<br>
+    Shizuku Osaka, Kanata Konoe, and Emma Verde's pre-Nijigasaki<br>
+    and Kiraten SSR cards will be included.`
   ],
-  'UPDATE_INFO': [
-    '下のボックス内の、色つきの日付の行をクリックすると展開/折りたたみされます。',
-    'Click to expand/collapse each row.'
+  'VIEWER': [
+    '転入生データベース',
+    'Viewer'
   ],
-  'BACK_TO_MAIN': [
-    'トップページに戻る。',
-    'Return to Homepage'
+  'VIEWER_INFO': [
+    'プルダウンメニューから転入生を選ぶと、下部にボタンが表示されます。<br>そのボタンを押すことで情報を見ることができます。',
+    'Select a transfer student from the dropdown and click the buttons on the right.'
+  ],
+  'VIEWER_MENU': [
+    '>転入生',
+    'Transfer Student' 
+  ],
+  'TRANSFER_SELECT_DEFAULT': [
+    '(選択)',
+    '(Select)'
+  ],
+  'VIEWER_BLANK': [
+    '(上のプルダウンメニューから、転入生を選択してください)',
+    '(Select a transfer student from the above dropdown menu)'
+  ],
+  'PROFILE_SUFFIX': [
+    ' プロフィール',
+    '\'s Profile'
+  ],
+  'SCHOOL_LABEL': [
+    '学校',
+    'School'
+  ],
+  'GRADE_LABEL': [
+    '学年',
+    'Grade'
+  ],
+  'BIRTHDAY_LABEL': [
+    '誕生日',
+    'Birthday'
+  ],
+  'BLOOD_TYPE_LABEL': [
+    '血液型',
+    'Blood Type'
+  ],
+  'HEIGHT_LABEL': [
+    '身長',
+    'Height'
+  ],
+  'MEASUREMENTS_LABEL': [
+    'スリー<wbr>サイズ',
+    'Measure<wbr>ments'
+  ],
+  'HOBBY_LABEL': [
+    '趣味',
+    'Hobby'
+  ],
+  'PARTNER_TEXT_LABEL': [
+    'パートナー時テキスト',
+    'Partner Text'
   ],
   // functions (not called with data-localize)
   'ARENA_ROUND_TITLE': [
@@ -289,9 +366,43 @@ const Localization = {
     (num) => `第${num}回`,
     (num) => `${num}`
   ],
+  'TRANSFER_GRADE': [
+    (num) => `${num}年`,
+    (num) => {
+      let year = numericSuffix(num);
+      year += ' Year';
+      return year;
+    }
+  ],
+  'TRANSFER_BIRTHDAY': [
+    (month, day) => `${month}月${day}日`,
+    (month, day) => `${monthNames[month-1]} ${numericSuffix(day)}`
+  ],
+  'TRANSFER_BLOOD_TYPE': [
+    (type) => `${type}型`,
+    (type) => type
+  ],
+  'TRANSFER_HEIGHT': [
+    (height) => `${height}cm`,
+    (height) => {
+      let inches = height * 0.3937;
+      const feet = Math.floor(inches / 12);
+      inches = Math.floor(inches % 12);
+      return `${height}cm (${feet}'${inches}")`;
+    }
+  ],
+  'TRANSFER_CARD_HEADER': [
+    (idx, num) => ` ${(idx+1)}枚目 (部員No.${num})`,
+    (idx, num) => `'s ${numericSuffix(idx+1)} Card (Member No. ${num})`
+  ],
+  'TRANSFER_SIDETITLE': [
+    (title) => `サイドストーリー「${title}」`,
+    (title) => `Side Story: "${title}"`
+  ],
   // other data
   'TRANSLATED_PAGES': {
-    'llsif_arena.html': true
+    'llsif_arena.html': true,
+    'llsif-n.html': true
   }
 }
 
@@ -300,12 +411,52 @@ Localization['ARENA_SITE_TITLE'] =
     `${Localization.ARENA_PAGE_TITLE[index]} | ${title}`
   );
 
+Localization['TRANSFER_SITE_TITLE'] = 
+  Localization.SITE_TITLE.map((title, index) =>
+    `${Localization.TRANSFER_PAGE_TITLE[index]} | ${title}`
+  );
+
+// Functions for english numbers and dates
+function numericSuffix(num) {
+  let suffix = 'th';
+  if ((num < 10 || num > 20)) {
+    switch (num % 10) {
+      case 1:
+        suffix = 'st';
+        break;
+      case 2:
+        suffix = 'nd';
+        break;
+      case 3:
+        suffix = 'rd';
+        break;
+    }
+  }
+  return `${num}${suffix}`;
+}
+
+const monthNames = [
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
 // Functions for changing the language of the site
 
 function getLang() {
-  return +document.cookie.split('; ')
+  const lang = document.cookie.split('; ')
     .find(row => row.startsWith('lang='))
     ?.split('=')[1];
+  return lang ? +lang : null;
 }
 
 function setLang(lang) {
@@ -349,6 +500,13 @@ function initSelector() {
   })
 }
 
-let lang_select = getLang() ?? 0;
+function defaultLanguage() {
+  const navLang = navigator.language.substring(0, 2).toUpperCase();
+  const langIdx = Localization.LANG_CODE.indexOf(navLang);
+  // default to english for unsupported languages
+  return langIdx > 0 ? langIdx : 1;
+}
+
+let lang_select = getLang() ?? defaultLanguage();
 initSelector();
 setLang(lang_select);

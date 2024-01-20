@@ -11,18 +11,17 @@ if(isDebugMode) {
 
 //■タグデータ
 const SchoolData = [
-	{'name' : '青藍高校'   , 'color' : '#abe'},
-	{'name' : '東雲学園'   , 'color' : '#fa9'},
-	{'name' : '千歳橋高校' , 'color' : '#9db'},
-	{'name' : '藤黄学園'   , 'color' : '#fea'},
-	{'name' : '紫苑女学院' , 'color' : '#dcf'},
-	{'name' : 'Y.G国際学院', 'color' : '#cea'}
+	{'names' : ['青藍高校','Seiran High School']   , 'color' : '#abe'},
+	{'names' : ['東雲学園','Shinonome Academy']   , 'color' : '#fa9'},
+	{'names' : ['千歳橋高校','Chitose Bridge High School'] , 'color' : '#9db'},
+	{'names' : ['藤黄学園','Touou Academy']   , 'color' : '#fea'},
+	{'names' : ['紫苑女学院','Shion Girls Academy'] , 'color' : '#dcf'},
+	{'names' : ['Y.G国際学院','Y.G. International Academy'], 'color' : '#cea'}
 ];
 
 //■■サブルーチン
 //■転入生の顔アイコンを出力
-function DrawFace(name){
-	const target = NData.find(q => q.name === name);
+function DrawFace(target){
 	if(target === undefined){
 		return `<div class="face_empty"></div>`;
 	} else {
@@ -32,71 +31,91 @@ function DrawFace(name){
 
 //■■出力
 //■ボタンの描画
-function DrawButtons(name) {
-	if(name === ""){
-		document.getElementById("ButtonField").innerHTML = '';
-		document.getElementById("ButtonField").classList.remove("has_button");
+function DrawButtons(idx) {
+	idx = +idx;
+
+	const buttonField = document.getElementById("ButtonField");
+	buttonField.innerHTML = '';
+	if(idx === -1){
+		buttonField.classList.remove("has_button");
 		return false;
 	}
 
-	const target = NData.find( q => q.name === name);
-	let Output = `<span class="jump" onclick="DrawProfile('${target.name}')">Profile</span>`
-	+ target.card.reduce( (text, card, index) => {
-		return text + `<span class="jump" onclick="DrawCardData('${target.name}',${index})">${(index+1)}</span>`
-	}, '');
+	const target = NData[idx];
+	const profileButton = document.createElement('span');
+	profileButton.textContent = 'Profile';
+	profileButton.classList.add('jump');
+	profileButton.addEventListener('click', () => {
+		buttonField.querySelector('span.jump.active')?.classList.remove('active');
+		profileButton.classList.add('active');
+		history.replaceState({ndata: { idol: idx }}, '');
+		DrawProfile(target);
+	});
+	let Output = [profileButton, ...target.card.map( (card, index) => {
+		const cardButton = document.createElement('span');
+		cardButton.textContent = `${index+1}`;
+		cardButton.classList.add('jump');
+		cardButton.addEventListener('click', () => {
+			buttonField.querySelector('span.jump.active')?.classList.remove('active');
+			cardButton.classList.add('active');
+			history.replaceState({ndata: { idol: idx, card: index }}, '');
+			DrawCardData(target, index);
+		});
+		return cardButton;
+	})];
 
-	document.getElementById("ButtonField").innerHTML = Output;
-	document.getElementById("ButtonField").classList.add("has_button");
-	DrawProfile(name);
+	Output.forEach(button => buttonField.appendChild(button));
+	buttonField.classList.add("has_button");
+	// simulate a click on the profile button to draw the profile
+	profileButton.dispatchEvent(new MouseEvent('click'));
 }
 
 //■プロフィールの描画
-function DrawProfile(name){
-	const target = NData.find( q => q.name === name);
+function DrawProfile(target) {
 	if(target === undefined){ return false;}
 	
 	const Profile = `
-	<h3>${target.name} プロフィール</h3>
+	<h3>${target.names[lang_select]}${Localization.get('PROFILE_SUFFIX')}</h3>
 	<div class="profile-container">
-		${DrawFace(name)}
+		${DrawFace(target)}
 		<table class="profile-table">
 			<tbody>
 				<tr>
-					<td style="width: 40%">学校</td>
-					<td>${SchoolData[target.y].name}</td>
+					<td style="width: 40%">${Localization.get('SCHOOL_LABEL')}</td>
+					<td>${SchoolData[target.y].names[lang_select]}</td>
 				</tr>
 				<tr>
-					<td>学年</td>
-					<td>${target.grade}年</td>
+					<td>${Localization.get('GRADE_LABEL')}</td>
+					<td>${Localization.get('TRANSFER_GRADE')(target.grade)}</td>
 				</tr>
 				<tr>
-					<td>誕生日</td>
-					<td>${target.birth}日</td>
+					<td>${Localization.get('BIRTHDAY_LABEL')}</td>
+					<td>${Localization.get('TRANSFER_BIRTHDAY')(...target.birth)}</td>
 				</tr>
 				<tr>
-					<td>血液型</td>
-					<td>${target.blood}型</td>
+					<td>${Localization.get('BLOOD_TYPE_LABEL')}</td>
+					<td>${Localization.get('TRANSFER_BLOOD_TYPE')(target.blood)}</td>
 				</tr>
 				<tr>
-					<td>身長</td>
-					<td>${target.height}cm</td>
+					<td>${Localization.get('HEIGHT_LABEL')}</td>
+					<td>${Localization.get('TRANSFER_HEIGHT')(target.height)}</td>
 				</tr>
 				<tr style="word-break: keep-all;">
-					<td>スリー<wbr>サイズ</td>
+					<td>${Localization.get('MEASUREMENTS_LABEL')}</td>
 					<td>Ｂ${target.body[0]}<wbr>Ｗ${target.body[1]}<wbr>Ｈ${target.body[2]}cm</td>
 				</tr>
 				<tr>
-					<td>趣味</td>
-					<td>${target.hobby}</td>
+					<td>${Localization.get('HOBBY_LABEL')}</td>
+					<td>${target.hobbies[lang_select]}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>`;
 	
 	const PartnerText = 
-	('text' in target ?
-		`<h4>パートナー時テキスト</h4>`
-		+ target.text.map( text => `<div class="text_partner">${text}</div>`).join('')
+	('texts' in target ?
+		`<h4>${Localization.get('PARTNER_TEXT_LABEL')}</h4>`
+		+ target.texts.map( text => `<div class="text_partner">${text[lang_select]}</div>`).join('')
 	:
 		''
 	);
@@ -104,41 +123,40 @@ function DrawProfile(name){
 }
 
 //■カード個別データの作成
-function DrawCardData(name, num){
-	const targetChar = NData.find( q => q.name === name);
+function DrawCardData(targetChar, num){
 	if(targetChar === undefined){ return false;}
 	const targetCard = targetChar.card[num];
 	
-	let Output = `<h3>${targetChar.name} ${(num+1)}枚目 (部員No.${targetCard.num})</h3>`
-	+ ('memo' in targetCard ? '<p style="font-size: 90%">' + targetCard.memo + '<\/p>' : '')
+	let Output = `<h3>${targetChar.names[lang_select]}${Localization.get('TRANSFER_CARD_HEADER')(num, targetCard.num)}</h3>`
+	+ ('memos' in targetCard ? '<p style="font-size: 90%">' + targetCard.memos[lang_select] + '<\/p>' : '')
 	
-	if('text' in targetCard){
-		Output += '<h4>パートナー時テキスト<\/h4>';
-		for(temp3 of targetCard.text){
-			Output += '<div class="text_partner">' + temp3 + '<\/div>';
+	if('texts' in targetCard){
+		Output += `<h4>${Localization.get('PARTNER_TEXT_LABEL')}<\/h4>`;
+		for(temp3 of targetCard.texts){
+			Output += '<div class="text_partner">' + temp3[lang_select] + '<\/div>';
 		}
 	}
 	
 	const SideStoryText = 
 	('side' in targetCard ? 
-		`<h4>サイドストーリー「${targetCard.sidetitle}」</h4>`
+		`<h4>${Localization.get('TRANSFER_SIDETITLE')(targetCard.sidetitles[lang_select])}</h4>`
 		+ targetCard.side.map( text => {
-			const nameTemp = ('n' in text ? text.n : ('namealt' in targetChar ? targetChar.namealt : targetChar.name));
-			const faceTemp = DrawFace('f' in text ? text.f : targetChar.name);
+			const nameTemp = ('n' in text ? text.n : ('namealts' in targetChar ? targetChar.namealts[lang_select] : targetChar.names[lang_select]));
+			const faceTemp = DrawFace('f' in text ? NData.find(idol => idol.names[0] == text.f) : targetChar);
 			return `
 			<div class="text-story">
 				${faceTemp}
 				<div class="text">
 					<b>${nameTemp}</b><br>
-					${text.t}
+					${text.ts[lang_select]}
 				</div>
 			</div>`;
 		}).join('')
  	: '' );
  	
 	const FootNote = 
-	('foot' in targetCard ?
-		`<p style="font-size: 90%">${targetCard.foot}</p>`
+	('feet' in targetCard ?
+		`<p style="font-size: 90%">${targetCard.feet[lang_select]}</p>`
 	: '');
 
 	document.getElementById("NViewer").innerHTML = Output + SideStoryText + FootNote;
@@ -165,9 +183,10 @@ const TimeOutputLoaded = performance.now();
 //■初期化処理
 function initialize() {
 	//セレクトボックスに要素を追加
-	NData.forEach( temp => {
+	NData.forEach((temp, idx) => {
 		const option = document.createElement("option");
-		option.text = temp.name;
+		option.text = temp.names[lang_select];
+		option.value = idx;
 		option.style.cssText = 'background-color: ' + SchoolData[temp.y].color;
 		document.getElementById('PullDownMenu').appendChild(option);
 	});
@@ -175,8 +194,34 @@ function initialize() {
 	document.getElementById('NViewer').classList.remove('output-box-default');
 	document.getElementById('NViewer').innerHTML = `
 		<div style="padding: 10px; vertical-align: top; font-size: 130%; color: #666">
-			(上のプルダウンメニューから、転入生を選択してください)
+			${Localization.get('VIEWER_BLANK')}
 		</div>`;
+
+	// switch language of rendered elements when user changes site language
+	document.addEventListener('SetLanguage', () => {
+		document.getElementById('PullDownMenu').querySelectorAll('option').forEach(opt => {
+			if (opt.value >= 0) {
+				opt.text = NData[opt.value].names[lang_select];
+			} else {
+				opt.text = Localization.get('TRANSFER_SELECT_DEFAULT');
+			}
+		});
+		// simulate a click on the active story/profile button (if any) to redraw the content in the new language
+		document.querySelector('span.jump.active')?.dispatchEvent(new MouseEvent('click'));
+	});
+
+	if(history.state && history.state.ndata) {
+		const state = history.state.ndata;
+		document.getElementById('PullDownMenu').value = state.idol;
+		DrawButtons(state.idol);
+		if(state.card) {
+			DrawCardData(NData[state.idol], state.card);
+			document.getElementById("ButtonField").querySelector('span.jump.active')?.classList.remove('active');
+			document.getElementById("ButtonField").children[state.card + 1].classList.add('active');
+			// drawing the buttons can push a cardless state, so replace the original state if it had a card
+			history.replaceState({ndata: state}, '');
+		}
+	}
 	
 	//デバック用
 	if(isDebugMode) {
