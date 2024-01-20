@@ -1,15 +1,4 @@
-//■デバッグモード
-const isDebugMode = (location.search.substring(1).split('&').indexOf('debug') >= 0);
-if(isDebugMode) {
-	//デバッグモードであることを表示
-	document.title = '[debug]' + document.title;
-	document.bgColor = '#dce';
-	document.getElementById("TitleName").innerHTML += "*";
-	document.getElementById("TitleName").classList.add("title-debug");
-	document.getElementById("BackToMain").href += "?debug";
-}
-
-//■タグデータ
+//■学校のデータ
 const SchoolData = [
 	{'names' : ['青藍高校','Seiran High School']   , 'color' : '#abe'},
 	{'names' : ['東雲学園','Shinonome Academy']   , 'color' : '#fa9'},
@@ -41,7 +30,7 @@ function DrawButtons(idx) {
 		return false;
 	}
 
-	const target = NData[idx];
+	const target = window['JSON-llsif-n'][idx];
 	const profileButton = document.createElement('span');
 	profileButton.textContent = 'Profile';
 	profileButton.classList.add('jump');
@@ -73,11 +62,11 @@ function DrawButtons(idx) {
 //■プロフィールの描画
 function DrawProfile(target) {
 	if(target === undefined){ return false;}
-	
+
 	const Profile = `
 	<h3>${target.names[lang_select]}${Localization.get('PROFILE_SUFFIX')}</h3>
 	<div class="profile-container">
-		${DrawFace(target)}
+		${WriteFaceN(target.x, target.y)}
 		<table class="profile-table">
 			<tbody>
 				<tr>
@@ -127,22 +116,22 @@ function DrawCardData(targetChar, num){
 	if(targetChar === undefined){ return false;}
 	const targetCard = targetChar.card[num];
 	
-	let Output = `<h3>${targetChar.names[lang_select]}${Localization.get('TRANSFER_CARD_HEADER')(num, targetCard.num)}</h3>`
-	+ ('memos' in targetCard ? '<p style="font-size: 90%">' + targetCard.memos[lang_select] + '<\/p>' : '')
+	const Header = `<h3>${targetChar.names[lang_select]}${Localization.get('TRANSFER_CARD_HEADER')(num, targetCard.num)}</h3>`
+	+ ('memos' in targetCard ? '<p style="font-size: 90%">' + targetCard.memos[lang_select] + '<\/p>' : '');
 	
-	if('texts' in targetCard){
-		Output += `<h4>${Localization.get('PARTNER_TEXT_LABEL')}<\/h4>`;
-		for(temp3 of targetCard.texts){
-			Output += '<div class="text_partner">' + temp3[lang_select] + '<\/div>';
-		}
-	}
+	const PartnerText = ('texts' in targetCard ?
+		`<h4>${Localization.get('PARTNER_TEXT_LABEL')}<\/h4>`
+		+ targetCard.texts.map( t => `<div class="text_partner">${t[lang_select]}</div>`).join('')
+	:
+		''
+	);
 	
-	const SideStoryText = 
-	('side' in targetCard ? 
+	
+	const SideStoryText = ('side' in targetCard ? 
 		`<h4>${Localization.get('TRANSFER_SIDETITLE')(targetCard.sidetitles[lang_select])}</h4>`
 		+ targetCard.side.map( text => {
-			const nameTemp = ('n' in text ? text.n : ('namealts' in targetChar ? targetChar.namealts[lang_select] : targetChar.names[lang_select]));
-			const faceTemp = DrawFace('f' in text ? NData.find(idol => idol.names[0] == text.f) : targetChar);
+			const nameTemp = ('namealts' in text ? text.namealts[lang_select] : ('namealts' in targetChar ? targetChar.namealts[lang_select] : targetChar.names[lang_select]));
+			const faceTemp = ('noface' in text ? '' : WriteFaceN(targetChar.x, targetChar.y));
 			return `
 			<div class="text-story">
 				${faceTemp}
@@ -154,36 +143,16 @@ function DrawCardData(targetChar, num){
 		}).join('')
  	: '' );
  	
-	const FootNote = 
-	('feet' in targetCard ?
-		`<p style="font-size: 90%">${targetCard.feet[lang_select]}</p>`
-	: '');
+	const FootNote = ('feet' in targetCard ? `<p style="font-size: 90%">${targetCard.feet[lang_select]}</p>` : '');
 
-	document.getElementById("NViewer").innerHTML = Output + SideStoryText + FootNote;
+	document.getElementById("NViewer").innerHTML = Header + PartnerText + SideStoryText + FootNote;
 	document.getElementById("NViewer").scrollTop = 0;
 }
 
-
-//■■初期処理
-//■JSONデータベースの読み込み
-const TimeOutputStart = performance.now();
-
-const JSONPath = 'data/llsif-n.json';
-let NData = null;
-fetch(JSONPath)
-	.then(response => response.json())
-	.then(data => {
-		NData = data;
-		initialize();
-	}
-);
-
-const TimeOutputLoaded = performance.now();
-
-//■初期化処理
+//■■初期化処理
 function initialize() {
 	//セレクトボックスに要素を追加
-	NData.forEach((temp, idx) => {
+	window['JSON-llsif-n'].forEach( (temp, idx) => {
 		const option = document.createElement("option");
 		option.text = temp.names[lang_select];
 		option.value = idx;
@@ -214,8 +183,8 @@ function initialize() {
 		const state = history.state.ndata;
 		document.getElementById('PullDownMenu').value = state.idol;
 		DrawButtons(state.idol);
-		if(state.card) {
-			DrawCardData(NData[state.idol], state.card);
+		if(state.card != null) {
+			DrawCardData(window['JSON-llsif-n'][state.idol], state.card);
 			document.getElementById("ButtonField").querySelector('span.jump.active')?.classList.remove('active');
 			document.getElementById("ButtonField").children[state.card + 1].classList.add('active');
 			// drawing the buttons can push a cardless state, so replace the original state if it had a card
@@ -227,6 +196,6 @@ function initialize() {
 	if(isDebugMode) {
 		//描画時間の出力
 		const TimeOutputEnd = performance.now();
-		console.log(`スクフェス 転入生データベース\n読み込み： ${TimeOutputLoaded - TimeOutputStart}ミリ秒\n初期化: ${TimeOutputEnd - TimeOutputLoaded}ミリ秒`);
+		console.log(`スクフェス 転入生データベース\n初期化処理： ${TimeOutputEnd - TimeLoadingStart}ミリ秒`);
 	}
 }

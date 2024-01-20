@@ -2028,7 +2028,7 @@
                             "うぅ……緊張するなあ<br>それどころじゃないのに……",
                             "Ugh... I'm so nervous.<br />Even though I shouldn't be..."
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -3487,7 +3487,7 @@
                             "つまりこれは我の仮の姿であり、我が真の姿は……！<br>くっ、こ……これ以上この姿を見ないでくれ……！！！！！",
                             "So this is my secret identity. My real identity is...<br />Do-don't look at me any more!!!"
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -6392,7 +6392,7 @@
                             "はっ、はっ……ふう……<br>今日のランニングはここがゴールですね",
                             "This is the goal line for our run today."
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -15024,8 +15024,8 @@
                             "♪",
                             "La la la..."
                         ],
-                        "n": "太郎",
-                        "f": ""
+                        "namealts": ["太郎", "Taro"],
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -15062,8 +15062,8 @@
                             "♪♪♪",
                             "La la la..."
                         ],
-                        "n": "太郎",
-                        "f": ""
+                        "namealts": ["太郎", "Taro"],
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -15256,7 +15256,8 @@
                         "ts": [
                             "わ、わあっ！<br>太郎〜、そんなに動いたら身体ふけないよっ",
                             "Wh-Whoa! Taro, I can't clean you if you keep bucking<br />around like that!"
-                        ]
+                        ],
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -17501,7 +17502,7 @@
                             "すごい……！<br>ステージに本当に風が吹いたんだ……！",
                             "Whoa... Our performance was amazing!"
                         ],
-                        "f": false
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -20369,7 +20370,7 @@
                             "わ、わーーっ！<br>ちょっとどいてもらえますか〜っ！",
                             "Ah! Hey! Can you move out of my way?!"
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -22676,7 +22677,7 @@
                             "さっきのところはすごくよかったよ！<br>自分のポーズをきわめてこーっ！",
                             "That part just now was perfect! We're gonna nail<br />our individual poses!"
                         ],
-                        "f": false
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -23047,7 +23048,7 @@
                             "『全周警戒！　牛の接近に注意せよ！！！』",
                             "Be on guard! Be aware when the bull charges!"
                         ],
-                        "f": false
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -24873,7 +24874,7 @@
                             "むぎゃー！！",
                             "WAGHAAAH!"
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -25000,7 +25001,7 @@
                             "吾輩はロボットである。名前はまだないが、<br>夢はスクールアイドルそして、世界征服である……っと",
                             "I AM A ROBOT. I DO NOT HAVE A NAME YET,<br />BUT MY DREAM IS TO BECOME A SCHOOL<br />IDOL AND TAKE OVER THE WORLD..."
                         ],
-                        "f": ""
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -25294,8 +25295,8 @@
                             "（――）",
                             "(----)"
                         ],
-                        "n": "",
-                        "f": ""
+                        "namealts": ["",""],
+                        "noface": true
                     },
                     {
                         "ts": [
@@ -25314,15 +25315,15 @@
                             "……",
                             "..."
                         ],
-                        "n": "",
-                        "f": ""
+                        "namealts": ["",""],
+                        "noface": true
                     },
                     {
                         "ts": [
                             "……",
                             "..."
                         ],
-                        "n": ""
+                        "namealts": ["",""]
                     },
                     {
                         "ts": [
@@ -25341,7 +25342,7 @@
                             "ジャーネー",
                             "See you!"
                         ],
-                        "f": ""
+                        "noface": true
                     }
                 ],
                 "feet": [
@@ -30063,7 +30064,7 @@
                     },
                     {
                         "ts": [
-                            "こうやって勝利をあらわしつつ……<br>ここが宴っぽさを出すんです<br>ゆかりのジェスチャーは何でも出来ちゃいますね～♪",
+                            "こうやって勝利をあらわしつつ……<br>ここが宴っぽさを出すんです<br>ゆかりのジェスチャーは何でも出来ちゃいますね〜♪",
                             "As I make the move \"victory\" like so, I combine it<br />with a feast-like gesture. Nonverbal communication<br />is my forte!"
                         ]
                     },

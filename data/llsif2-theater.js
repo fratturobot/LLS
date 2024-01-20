@@ -96,7 +96,7 @@ const SortTarget = [
 {"name": "出演：米女 メイ",              "condition": "tag,Mei"},
 {"name": "出演：若菜 四季",              "condition": "tag,Shiki"},
 {"name": "出演：鬼塚 夏美",              "condition": "tag,Natsumi"},
-{"name": "出演：ウィーン・マルガレーテ", "condition": "tag,Wien"},
+{"name": "出演：ウィーン・マルガレーテ", "condition": "tag,Margarete"},
 {"name": "出演：鬼塚 冬毬",              "condition": "tag,Tomari"},
 {"name": "----"},
 {"name": "テーマ：季節の行事", "condition": "tag,Season"},
@@ -105,6 +105,10 @@ const SortTarget = [
 //{"name": "----"},
 //{"name": "シリーズ：堕天使ヨハネ", "condition": "tag,Yohane"},
 ];
+
+//■サブルーチン
+//■注釈
+
 
 //■■メイン出力
 //■条件に合致するストーリーを抜き出してリストアップ
@@ -171,11 +175,29 @@ function MakeModal(id){
 	//タイトル
 	document.getElementById("Modal-Title").innerHTML = result.title;
 	
+	//{{note:1:2}}の部分を注釈にする
+	let noteList = [];
+	const pattern = new RegExp(/\{\{note:(.*?):(.*?)\}\}/g);
+	while ((match = pattern.exec(result.text)) !== null) {
+		noteList.push(match[2]);
+	}
 	//テキスト
-	const TextLog = result.text.split('\n');
-	document.getElementById("Modal-Text").innerHTML = TextLog.map( text => {
+	let noteNumber = 1;
+	const TextLog = result.text.replace(pattern, function(match, s1, s2){
+		return `<span class="underline">${s1}<sup style="color:purple">*${noteNumber}</sup></span>{{notenum:${noteNumber++}}}`
+	}).split('\n');
+	document.getElementById("Modal-Text").innerHTML = TextLog.map( (text, index) => {
 		text = text.split('\t');
-		return DrawCharName(result.tags[text[0]]) + `<p>${text[1]}</p><hr>`;
+		
+		let currentNote = [];
+		text[1] = text[1].replace(/\{\{notenum:(\d+)\}\}/g, function(match, noteIndex){
+			if(match) { currentNote.push(`<span>*${noteIndex}： ${noteList[parseInt(noteIndex, 10)-1]}</span>`);}
+			return ``;
+		});
+		
+		return DrawCharName(result.tags[text[0]]) + `<p>${text[1]}</p>`
+		+ (currentNote.length ? `<p class="note">${currentNote.join('<br>')}</p>` : '')
+		+ (index === TextLog.length-1 ? '' : '<hr>');
 	}).join("");
 	
 	//ポップアップを表示

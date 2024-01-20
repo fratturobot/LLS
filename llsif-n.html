@@ -94,14 +94,6 @@ span.jump.active {
 	padding: 2px 8px;
 	border-bottom: 1px solid #ddd;
 }
-.face {
-	display: inline-block;
-	margin: auto;
-	width: 64px;
-	height: 64px;
-	background-image: url(img/students.png);
-	background-repeat: no-repeat;
-}
 
 /* テキスト関連 */
 .text_partner {
@@ -165,6 +157,10 @@ span.jump.active {
 	}
 	/* サイドストーリー */
 	.text-story {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: 90px 1fr;
 		background-color: #fde;
 		width: 670px;
 		min-height: 120px;
@@ -174,11 +170,7 @@ span.jump.active {
 		border-width: 2px 8px;
 		border-color: #d9b;
 		border-radius: 50vw;
-	}
-	.text-story .face {
-		position: absolute;
-		top: 28px; 
-		left: 28px;
+		padding-left: 20px;
 	}
 	.text {
 		display: inline-block;
@@ -186,15 +178,12 @@ span.jump.active {
 		min-height: 110px;
 		padding: 10px 0px;
 		position: relative;
-		top: 5px; 
-		left: 110px;
 		margin: 0;
 		font-size: 110%;
 	}
 }
 --></style>
-<script src="data/localization.js" defer></script>
-<script src="data/llsif-n.js" defer></script>
+<script src="data/loader.js" data-src="data/localization.js,data/llsif-n.js,data/llsif-n.json,data/common-library.js"></script>
 </head>
 <body class="left">
 <main>
@@ -248,9 +237,15 @@ span.jump.active {
 		<p data-localize="UPDATE_INFO">下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
 		<div class="history-container">
 			<details open>
-				<summary class="important"><span class="date">2024/01/15</span></summary>
+				<summary class="important"><span class="date">2024/01/20</span></summary>
 				<div>
 					<span class="icon-new"></span>EN translation for page, idol data.
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/01/19</span></summary>
+				<div>
+					<span class="icon-fix"></span>データ読み込み周りの仕様を変更
 				</div>
 			</details>
 			<details>
