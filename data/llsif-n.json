@@ -412,7 +412,7 @@
                 "num": 1588,
                 "memos": [
                     "2018年5月20日追加。イベント「第6回 なかよしマッチ」報酬<br>ゲーム上では虹ヶ咲扱いであったが、「キラキラ☆転入生フェスティバル」という企画で追加されたカードなので掲載している。",
-                    "Added on May 19, 2018.  Event reward for \"null\"."
+                    "Added on May 19, 2018.  Event reward for \"Round 34 SCORE MATCH\". (Rewards merged with Friendly Match Round 6 JP Event)<br>Included here as part of the KiraTen festival, despite its categorization as a 'Nijigasaki' card in-game."
                 ],
                 "texts": [
                     [
@@ -2888,7 +2888,7 @@
                 "num": 709,
                 "memos": [
                     "2015年10月20日追加。イベント「第8回 メドレーフェスティバル」報酬",
-                    "Added on October 19, 2015.  Event reward for \"\"."
+                    "Added on October 19, 2015.  Event reward for \"Round 7 MEDLEY FESTIVAL\". (Rewards merged with Medley Festival Round 8 JP Event)"
                 ],
                 "texts": [
                     [
@@ -3038,7 +3038,7 @@
                 "num": 1534,
                 "memos": [
                     "2018年4月5日追加。イベント「第5回 なかよしマッチ」報酬",
-                    "Added on April 4, 2018.  Event reward for \"null\"."
+                    "Added on April 4, 2018.  Event reward for \"Episode 9 ADVENTURE STROLL\". (Rewards merged with Friendly Match Round 5 JP Event)"
                 ],
                 "texts": [
                     [
@@ -5472,7 +5472,7 @@
                 "num": 3203,
                 "memos": [
                     "2022年1月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「誰かのために」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on January 23, 2022."
+                    "Added on January 23, 2022.  A UR awarded for placing 7th in the 4th Transfer Student Election, her skill name was 'For Someone'. No unique partner text or side story."
                 ]
             }
         ]
@@ -5815,7 +5815,7 @@
                 "num": 1315,
                 "memos": [
                     "2017年10月5日追加。イベント「Calling you!」報酬",
-                    "Added on October 4, 2017.  Event reward for \"null\"."
+                    "Added on October 4, 2017.  Event reward for \"Round 16 MEDLEY FESTIVAL\". (Rewards merged with Calling you! JP Event)"
                 ],
                 "texts": [
                     [
@@ -6442,7 +6442,7 @@
                 "num": 1589,
                 "memos": [
                     "2018年5月20日追加。イベント「第6回 なかよしマッチ」報酬",
-                    "Added on May 19, 2018.  Event reward for \"null\"."
+                    "Added on May 19, 2018.  Event reward for \"Round 34 SCORE MATCH\". (Rewards merged with Friendly Match Round 6 JP Event)"
                 ],
                 "texts": [
                     [
@@ -6997,7 +6997,7 @@
                 "num": 1639,
                 "memos": [
                     "2018年7月5日追加。イベント「第7回 なかよしマッチ」報酬",
-                    "Added on July 4, 2018.  Event reward for \"null\"."
+                    "Added on July 4, 2018.  Event reward for \"Round 35 SCORE MATCH\". (Event rewards merged with \"Friendly Match Round 7\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -8107,7 +8107,7 @@
                 "num": 2049,
                 "memos": [
                     "2019年6月10日追加。イベント「第18回 チャレンジフェスティバル」報酬<br>ゲーム上では虹ヶ咲扱いであったが、「キラキラ☆転入生フェスティバル」という企画で追加されたカードなので掲載している。",
-                    "Added on June 4, 2019.  Event reward for \"Round 14 CHALLENGE FESTIVAL\"."
+                    "Added on June 4, 2019.  Event reward for \"Round 14 CHALLENGE FESTIVAL\".<br>Included here as part of the KiraTen festival, despite its categorization as a 'Nijigasaki' card in-game."
                 ],
                 "texts": [
                     [
@@ -8737,7 +8737,7 @@
                 "num": 3078,
                 "memos": [
                     "2021年11月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「大好きのお返し♡」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on November 23, 2021."
+                    "Added on November 23, 2021. A UR awarded for placing 1st in the 4th Transfer Student Election, her skill name was 'In Return for Love!'. No unique partner text or side story."
                 ]
             }
         ]
@@ -8924,7 +8924,7 @@
                 "num": 676,
                 "memos": [
                     "2015年9月5日追加。イベント「第7回 メドレーフェスティバル」報酬",
-                    "Added on September 4, 2015.  Event reward for \"\"."
+                    "Added on September 4, 2015.  Event reward for \"Round 6 MEDLEY FESTIVAL\". (Event rewards merged with \"Medley Festival Round 7\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -9299,7 +9299,7 @@
                 "num": 2855,
                 "memos": [
                     "2021年7月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「キミも一緒に」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on July 23, 2021."
+                    "Added on July 23, 2021. A UR awarded for placing 4th in the 4th Transfer Student Election, her skill name was 'You Should Join Us'. No unique partner text or side story."
                 ]
             }
         ]
@@ -9486,7 +9486,7 @@
                 "num": 635,
                 "memos": [
                     "2015年6月20日追加。イベント「SMILING!」報酬",
-                    "Added on June 19, 2015.  Event reward for \"\"."
+                    "Added on June 19, 2015.  Event reward for \"SMILING!\"."
                 ],
                 "texts": [
                     [
@@ -10272,7 +10272,7 @@
                 "num": 1811,
                 "memos": [
                     "2018年12月5日追加。イベント「第16回 チャレンジフェスティバル」報酬",
-                    "Added on December 3, 2018.  Event reward for \"null\"."
+                    "Added on December 3, 2018.  Event reward for \"Round 12 CHALLENGE FESTIVAL\". (Event rewards merged with \"Challenge Festival Round 16\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -11151,7 +11151,7 @@
                 "num": 734,
                 "memos": [
                     "2015年11月20日追加。イベント「第22回 スコアマッチ」報酬",
-                    "Added on November 19, 2015.  Event reward for \"\"."
+                    "Added on November 19, 2015.  Event reward for \"Round 20 SCORE MATCH\". (Event rewards merged with \"Score Match Round 22\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -12087,7 +12087,7 @@
                 "num": 3307,
                 "memos": [
                     "2022年3月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「陸を泳ぐように」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on March 23, 2022."
+                    "Added on March 23, 2022. A UR awarded for placing 9th in the 4th Transfer Student Election, her skill name was 'Like Swimming on Land'. No unique partner text or side story."
                 ]
             }
         ]
@@ -12985,7 +12985,7 @@
                 "num": 1426,
                 "memos": [
                     "2018年1月20日追加。イベント「おこりんぼ大会」報酬",
-                    "Added on January 19, 2018.  Event reward for \"null\"."
+                    "Added on January 19, 2018.  Event reward for \"Round 36 SCORE MATCH\" (Event rewards merged with 「おこりんぼ大会」 JP Event)."
                 ],
                 "texts": [
                     [
@@ -13615,7 +13615,7 @@
                 "num": 1720,
                 "memos": [
                     "2018年9月20日追加。イベント「また会える気がするからさ」報酬",
-                    "Added on September 19, 2018.  Event reward for \"null\"."
+                    "Added on September 19, 2018.  Event reward for \"Episode 8 ADVENTURE STROLL\". (Event rewards merged with 「また会える気がするからさ」 JP Event)"
                 ],
                 "texts": [
                     [
@@ -14725,7 +14725,7 @@
                 "num": 1640,
                 "memos": [
                     "2018年7月5日追加。イベント「第7回 なかよしマッチ」報酬",
-                    "Added on July 4, 2018.  Event reward for \"null\"."
+                    "Added on July 4, 2018.  Event reward for \"Round 35 SCORE MATCH\". (Event rewards merged with \"Friendly Match Round 7\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -16990,7 +16990,7 @@
                 "num": 1721,
                 "memos": [
                     "2018年9月20日追加。イベント「また会える気がするからさ」報酬",
-                    "Added on September 19, 2018.  Event reward for \"null\"."
+                    "Added on September 19, 2018.  Event reward for \"Episode 8 ADVENTURE STROLL\". (Event rewards merged with 「また会える気がするからさ」 JP Event)"
                 ],
                 "texts": [
                     [
@@ -18842,7 +18842,7 @@
                 "num": 2927,
                 "memos": [
                     "2021年8月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「笑顔を届けたくて」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on August 23, 2021."
+                    "Added on August 23, 2021. A UR awarded for placing 2nd in the 4th Transfer Student Election, her skill name was 'Delivering the Smiles'. No unique partner text or side story."
                 ]
             }
         ]
@@ -19272,7 +19272,7 @@
                 "num": 1651,
                 "memos": [
                     "2018年7月20日追加。イベント「Guilty Eyesで恋に落ちて」報酬",
-                    "Added on July 19, 2018.  Event reward for \"null\"."
+                    "Added on July 19, 2018.  Event reward for \"Round 35 SCORE MATCH\". (Event rewards merged with 「Guilty Eyesで恋に落ちて」 JP Event)"
                 ],
                 "texts": [
                     [
@@ -19422,7 +19422,7 @@
                 "num": 3013,
                 "memos": [
                     "2021年10月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「頑張る理由」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on October 23, 2021."
+                    "Added on October 23, 2021. A UR awarded for placing 3rd in the 4th Transfer Student Election, her skill name was 'Why I Do My Best'. No unique partner text or side story."
                 ]
             }
         ]
@@ -20344,7 +20344,7 @@
                 "num": 1178,
                 "memos": [
                     "2017年4月20日追加。イベント「第9回 チャレンジフェスティバル」報酬",
-                    "Added on April 19, 2017.  Event reward for \"null\"."
+                    "Added on April 19, 2017.  Event reward for \"Round 5 COMPANION MATCH\". (Event rewards merged with \"Challenge Festival Round 9\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -20987,7 +20987,7 @@
                 "num": 1706,
                 "memos": [
                     "2018年9月5日追加。イベント「第36回 スコアマッチ」報酬",
-                    "Added on September 4, 2018.  Event reward for \"null\"."
+                    "Added on September 4, 2018.  Event reward for \"Episode 7 ADVENTURE STROLL\". (Event rewards merged with \"Score Match Round 36\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -21560,7 +21560,7 @@
                 "num": 1650,
                 "memos": [
                     "2018年7月20日追加。イベント「Guilty Eyesで恋に落ちて」報酬",
-                    "Added on July 19, 2018.  Event reward for \"null\"."
+                    "Added on July 19, 2018.  Event reward for \"Round 35 SCORE MATCH\". (Event rewards merged with 「Guilty Eyesで恋に落ちて」 JP Event)"
                 ],
                 "texts": [
                     [
@@ -24046,7 +24046,7 @@
                 "num": 3125,
                 "memos": [
                     "2021年12月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「気持ちに応えて」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on December 23, 2021."
+                    "Added on December 23, 2021. A UR awarded for placing 6th in the 4th Transfer Student Election, her skill name was 'Answer Your Feelings'. No unique partner text or side story."
                 ]
             }
         ]
@@ -24975,7 +24975,7 @@
                 "num": 1210,
                 "memos": [
                     "2017年6月5日追加。イベント「第17回 メドレーフェスティバル」報酬",
-                    "Added on June 4, 2017.  Event reward for \"null\"."
+                    "Added on June 4, 2017.  Event reward for \"Graduation Goodbyes\". (Event rewards merged with \"Medley Festival Round 17\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -25804,7 +25804,7 @@
                 "num": 3244,
                 "memos": [
                     "2022年2月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「応援のチカラ」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on February 23, 2022."
+                    "Added on February 23, 2022. A UR awarded for placing 8th in the 4th Transfer Student Election, her skill name was 'The Power of Cheering'. No unique partner text or side story."
                 ]
             }
         ]
@@ -26803,7 +26803,7 @@
                 "num": 1707,
                 "memos": [
                     "2018年9月5日追加。イベント「第36回 スコアマッチ」報酬",
-                    "Added on September 4, 2018.  Event reward for \"null\"."
+                    "Added on September 4, 2018.  Event reward for \"Episode 7 ADVENTURE STROLL\". (Event rewards merged with \"Score Match Round 36\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -27157,7 +27157,7 @@
                 "num": 644,
                 "memos": [
                     "2015年7月5日追加。イベント「第19回 スコアマッチ」報酬",
-                    "Added on July 4, 2015.  Event reward for \"\"."
+                    "Added on July 4, 2015.  Event reward for \"Round 19 SCORE MATCH\". (Event rewards merged with \"Score Match Round 19\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -27955,7 +27955,7 @@
                 "num": 2067,
                 "memos": [
                     "2019年6月25日追加。イベント「第10回 おさんぽラリー」報酬<br>ゲーム上では虹ヶ咲扱いであったが、「キラキラ☆転入生フェスティバル」という企画で追加されたカードなので掲載している。",
-                    "Added on June 19, 2019.  Event reward for \"Episode 10 ADVENTURE STROLL\"."
+                    "Added on June 19, 2019.  Event reward for \"Episode 10 ADVENTURE STROLL\".<br>Included here as part of the KiraTen festival, despite its categorization as a 'Nijigasaki' card in-game."
                 ],
                 "texts": [
                     [
@@ -28374,7 +28374,7 @@
                 "num": 1446,
                 "memos": [
                     "2018年2月5日追加。イベント「第12回 チャレンジフェスティバル」報酬",
-                    "Added on February 4, 2018.  Event reward for \"null\"."
+                    "Added on February 4, 2018.  Event reward for \"Round 6 COMPANION MATCH\". (Event rewards merged with \"Challenge Festival Round 12\" JP Event)"
                 ],
                 "texts": [
                     [
@@ -28599,7 +28599,7 @@
                 "num": 2970,
                 "memos": [
                     "2021年9月25日追加。「第4回転入生総選挙」での上位入賞を記念したUR<br>特技名は「標的はあなた」<br>専用のパートナー時テキストやサイドストーリーは実装されていない。",
-                    "Added on September 23, 2021."
+                    "Added on September 23, 2021. A UR awarded for placing 8th in the 5th Transfer Student Election, her skill name was \"You're the Target\". No unique partner text or side story."
                 ]
             }
         ]
@@ -29025,7 +29025,7 @@
                 "num": 1812,
                 "memos": [
                     "2018年12月5日追加。イベント「第16回 チャレンジフェスティバル」報酬",
-                    "Added on December 3, 2018.  Event reward for \"null\"."
+                    "Added on December 3, 2018.  Event reward for \"Round 12 CHALLENGE FESTIVAL\". (Event rewards merged with \"Challenge Festival Round 16\" JP Event)"
                 ],
                 "texts": [
                     [
