@@ -23,10 +23,6 @@ const Localization = {
     'ボックスの右上に赤い円が表示されている場合、リンク先のページがスマートフォンでの閲覧に最適化されていない可能性があります。',
     'Pages marked with red circles have not been optimized for smartphone display.  Those with yellow circles have not been translated.'
   ],
-  /*'GENERAL': [
-    '総合',
-    'GENERAL'
-  ],*/
   'GENERAL_SERIES': [
     'ラブライブ！シリーズ総合',
     'Love Live! Series'
@@ -208,6 +204,96 @@ const Localization = {
   'BACK_TO_MAIN': [
     'トップページに戻る。',
     'Return to Homepage'
+  ],
+  // GROUP NAMES
+  'MUSE': [
+    'μ’s',
+    'μ\'s'
+  ],
+  'AQOURS': [
+    'Aqours',
+    'Aqours'
+  ],
+  'NIJI': [
+    '虹ヶ咲',
+    'Nijigasaki'
+  ],
+  'NIJI_LONG': [
+    '虹ヶ咲学園スクールアイドル同好会',
+    'Nijigasaki High School Idol Club'
+  ],
+  'LIELLA': [
+    'Liella!',
+    'Liella!'
+  ],
+  'HASU': [
+    '蓮ノ空',
+    'Hasunosora'
+  ],
+  'HASU_LONG': [
+    '蓮ノ空女学院スクールアイドルクラブ',
+    'Hasunosora Girls\' High School Idol Club'
+  ],
+  'MUSICAL': [
+    'ミュージカル',
+    'Musical'
+  ],
+  'MUSICAL_LONG': [
+    'スクールアイドルミュージカル',
+    'School Idol Musical'
+  ],
+  'YOHANE': [
+    '幻日のヨハネ',
+    'Yohane the Parhelion'
+  ],
+  // COLOR PAGE
+  'COLOR_PAGE_TITLE': [
+    'ラブライブ！シリーズ メンバーカラーまとめ',
+    'Love Live! Series Member Color Summary'
+  ],
+  'COLOR_SUMMARY': [
+    `「ラブライブ！」シリーズにおいて、各所で使われているメンバーカラーのまとめです。<br>
+    PCで閲覧している場合、Ctrlキーを押しながらRGB値やカラーコードの部分をクリックすると、それをクリップボードにコピーできます。<br>
+    このページではRGBでの抽出が可能なデジタルカラーのみを扱っています。`,
+    `Overview of the member image colors used across various media in the <i>Love Live!</i> series.<br>
+    On PC, hold <i>Ctrl</i> and click the RGB value or hexcode to copy it to your clipboard.<br>
+    This page only contains digital colors that can be sampled in RGB.`
+  ],
+  'COLOR_CORNER_COL': [
+    '→キャラクター<br>↓媒体',
+    'Character→<br>↓Media'
+  ],
+  'MISSING_MEDIA': [
+    '未定義の色',
+    'Undefined Color'
+  ],
+  'COLOR_LIST': [
+    'メンバーカラー一覧',
+    'Image Color List'
+  ],
+  'COLOR_LIST_NOTE': [
+    '各表は上下左右にスクロールできます。',
+    'Tables can be scrolled both vertically and horizontally'
+  ],
+  'REFERENCES': [
+    '出典一覧',
+    'Source List'
+  ],
+  'SOURCE': [
+    '出典',
+    'Source'
+  ],
+  'REASON': [
+    '理由',
+    'Reason'
+  ],
+  'MISSING_COLORS': [
+    '掲載できなかったもの',
+    'Missing Information'
+  ],
+  'UPDATE_NOCOLOR': [
+    '更新履歴（色追加以外）',
+    'Update History (other than adding colors)'
   ],
   //LIVE ARENA
   'ARENA_PAGE_TITLE': [
@@ -399,10 +485,15 @@ const Localization = {
     (title) => `サイドストーリー「${title}」`,
     (title) => `Side Story: "${title}"`
   ],
+  'IMAGE_COLORS': [
+    (group) => `${group}のメンバーカラー`,
+    (group) => `${group} Image Colors`
+  ],
   // other data
   'TRANSLATED_PAGES': {
     'llsif_arena.html': true,
-    'llsif-n.html': true
+    'llsif-n.html': true,
+    'color.html': true
   }
 }
 

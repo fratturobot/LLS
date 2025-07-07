@@ -1,6 +1,6 @@
 [
 	{
-		"name": "メンバー紹介\n(総合)",
+		"names": ["メンバー紹介\n(総合)","Member Profile (General)"],
 		"ref": "ラブライブ！シリーズ メンバー紹介",
 		"url": "https://www.lovelive-anime.jp/special/members/",
 		"color": {
@@ -75,13 +75,16 @@
 		}
 	},
 	{
-		"name": "μ's\n公式サイト",
+		"names": ["μ's\n公式サイト", "μ's\nOfficial Site"],
 		"ref": "ラブライブ！Official Web Site",
 		"url": "https://www.lovelive-anime.jp/otonokizaka/member/",
-		"reason": "画像のイメージカラー部分にグラデーションがかかっている"
+		"reasons": [
+			"画像のイメージカラー部分にグラデーションがかかっている",
+			"The image color is displayed with a gradient"
+		]
 	},
 	{
-		"name": "サンシャイン\n公式サイト",
+		"names": ["サンシャイン\n公式サイト", "Sunshine\nOfficial Site"],
 		"ref": "ラブライブ！サンシャイン!! Official Web Site | メンバー紹介",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/member.php",
 		"color": {
@@ -97,7 +100,7 @@
 		}
 	},
 	{
-		"name": "虹ヶ咲\n公式サイト",
+		"names": ["虹ヶ咲\n公式サイト", "Nijigasaki\nOfficial Site"],
 		"ref": "虹ヶ咲学園スクールアイドル同好会とは | ラブライブ！虹ヶ咲学園スクールアイドル同好会",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/about_nijigasaki.php",
 		"color": {
@@ -117,7 +120,7 @@
 		}
 	},
 	{
-		"name": "Liella!\n公式サイト",
+		"names": ["Liella!\n公式サイト", "Liella!\nOfficial Site"],
 		"ref": "メンバー紹介 | 「ラブライブ！スーパースター!!」公式サイト",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/member/",
 		"color": {
@@ -135,7 +138,7 @@
 		}
 	},
 	{
-		"name": "蓮ノ空\n公式サイト",
+		"names": ["蓮ノ空\n公式サイト", "Hasunosora\nOfficial Site"],
 		"ref": "MEMBER | 「蓮ノ空女学院スクールアイドルクラブ」公式サイト",
 		"url": "https://lovelive-anime.jp/hasunosora/member/",
 		"color": {
@@ -148,7 +151,7 @@
 		}
 	},
 	{
-		"name": "ミュージカル\n公式サイト",
+		"names": ["ミュージカル\n公式サイト", "Musical\nOfficial Site"],
 		"ref": "登場人物 | 「スクールアイドルミュージカル」公式サイト",
 		"url": "https://www.lovelive-anime.jp/special/musical/member.php",
 		"color": {
@@ -167,13 +170,16 @@
 		}
 	},
 	{
-		"name": "幻日のヨハネ\n 公式サイト",
+		"names": ["幻日のヨハネ\n 公式サイト", "Yohane the Parhelion\nOfficial Site"],
 		"ref": "幻日のヨハネ -SUNSHINE in the MIRROR- 公式サイト",
 		"url": "https://yohane.net",
-		"reason": "画像が不可逆圧縮であり、正しい色を抽出できない"
+		"reasons": [
+			"画像が不可逆圧縮であり、正しい色を抽出できない",
+			"Lossy compression is used, so the exact color cannot be determined"
+		]
 	},
 	{
-		"name": "スクフェス\n(基本背景-濃)",
+		"names": ["スクフェス\n(基本背景-濃)", "SIF\n(Dark Background)"],
 		"ref": "ラブライブ！スクールアイドルフェスティバル – スクフェス » メンバー",
 		"url": "https://lovelive-sif.bushimo.jp/member/",
 		"color": {
@@ -219,7 +225,7 @@
 		}
 	},
 	{
-		"name": "スクフェス\n(基本背景-薄)",
+		"names": ["スクフェス\n(基本背景-薄)","SIF\n(Light Background)"],
 		"ref": "ラブライブ！スクールアイドルフェスティバル – スクフェス » メンバー",
 		"url": "https://lovelive-sif.bushimo.jp/member/",
 		"color": {
@@ -265,7 +271,7 @@
 		}
 	},
 	{
-		"name": "スクフェスAC\n(公式サイト)",
+		"names": ["スクフェスAC\n(公式サイト)", "SIF:AC (Official Site)"],
 		"ref": "メンバー - ラブライブ！スクールアイドルフェスティバル ～after school ACTIVITY～ Next Stage 公式サイト",
 		"url": "https://www.jp.square-enix.com/lovelive-sifacns/member.html",
 		"color": {
@@ -290,7 +296,7 @@
 		}
 	},
 	{
-		"name": "スクスタ\n(公式サイト)",
+		"names": ["スクスタ\n(公式サイト)", "SIF (Official Site)"],
 		"ref": "ラブライブ！スクールアイドルフェスティバルALL STARS（スクスタ）",
 		"url": "https://lovelive-as.bushimo.jp/",
 		"color": {
@@ -327,7 +333,7 @@
 		}
 	},
 	{
-		"name": "スクスタ\n(ゲーム内)",
+		"names": ["スクスタ\n(ゲーム内)", "SIF (In-Game)"],
 		"color": {
 			"Honoka"   : {"r":"255", "g":"163", "b": "54"},
 			"Eli"      : {"r":"122", "g":"238", "b":"255"},
@@ -362,7 +368,7 @@
 		}
 	},
 	{
-		"name": "ぷちぐる\n(文字色)",
+		"names": ["ぷちぐる\n(文字色)", "Puchiguru (Text Color)"],
 		"color": {
 			"Honoka"   : {"r":"255", "g":"134", "b": "37"},
 			"Eli"      : {"r": "78", "g":"183", "b":"227"},
@@ -385,7 +391,7 @@
 		}
 	},
 	{
-		"name": "スクフェス2\n(公式サイト)",
+		"names": ["スクフェス2\n(公式サイト)", "SIF 2\n(Official Site)"],
 		"ref": "ラブライブ！スクールアイドルフェスティバル2",
 		"url": "https://lovelive-sif2.bushimo.jp",
 		"color": {
@@ -434,7 +440,7 @@
 		}
 	},
 	{
-		"name": "謎解き\nフェスティバル",
+		"names": ["謎解き\nフェスティバル", "Mystery Solving Festival"],
 		"ref": "【スクフェス2】謎解きフェスティバル",
 		"url": "https://lovelive-sif2.bushimo.jp/nazotoki/",
 		"color": {
@@ -481,7 +487,7 @@
 		}
 	},
 	{
-		"name": "μ's Final LoveLive!",
+		"names": ["μ's Final LoveLive!", "μ's Final LoveLive!"],
 		"ref": "μ's Final LoveLive!〜μ'sic Forever",
 		"url": "https://www.lovelive-anime.jp/otonokizaka/sp_finallive.html",
 		"color": {
@@ -497,8 +503,8 @@
 		}
 	},
 	{
-		"name": "第1回\nセンター総選挙",
-		"group": "Aqours",
+		"names": ["第1回\nセンター総選挙", "1st Center General Election"],
+		"group": "AQOURS",
 		"ref": "『ラブライブ！サンシャイン!!』第１回Aqoursセンターポジション総選挙　結果発表!!",
 		"url": "http://gs.dengeki.com/news/47720/",
 		"color": {
@@ -514,7 +520,7 @@
 		}
 	},
 	{
-		"name": "カバーガール\n総選挙",
+		"names": ["カバーガール\n総選挙", "Cover Girl General Election"],
 		"ref": "『ラブライブ！サンシャイン!!』読者投票企画 【第1回カバーガール総選挙 ～あなたが選ぶAqoursデート♡～】特設ページ",
 		"url": "http://gs.dengeki.com/serial_tohyo/",
 		"color": {
@@ -530,8 +536,8 @@
 		}
 	},
 	{
-		"name": "第2回\nセンター総選挙",
-		"group": "Aqours",
+		"names": ["第2回\nセンター総選挙", "2nd Center General Election"],
+		"group": "AQOURS",
 		"ref": "【最終結果速報】『ラブライブ！サンシャイン!!』Aqours第２回センターポジション総選挙　結果発表！",
 		"url": "http://gs.dengeki.com/news/86554/",
 		"color": {
@@ -547,8 +553,8 @@
 		}
 	},
 	{
-		"name": "第3回\nセンター総選挙",
-		"group": "Aqours",
+		"names": ["第3回\nセンター総選挙", "3rd Center General Election"],
+		"group": "AQOURS",
 		"ref": "【結果発表！】総投票数104万1120票！　『ラブライブ！サンシャイン!!』Aqours 4thシングル センターポジション総選挙　最終結果発表！",
 		"url": "http://gs.dengeki.com/news/127277/",
 		"color": {
@@ -564,8 +570,8 @@
 		}
 	},
 	{
-		"name": "デュオトリオ\n衣装イメージ",
-		"group": "Aqours",
+		"names": ["デュオトリオ\n衣装イメージ", "Duo/Trio Costume"],
+		"group": "AQOURS",
 		"ref": "【結果発表】『ラブライブ！サンシャイン!!』デュオトリオコレクションCD衣装テーマ決定投票、結果発表！",
 		"url": "http://gs.dengeki.com/news/99186/",
 		"color": {
@@ -581,8 +587,8 @@
 		}
 	},
 	{
-		"name": "劇場版ロゴ",
-		"group": "Aqours",
+		"names": ["劇場版ロゴ", "Movie Logo"],
+		"group": "AQOURS",
 		"ref": "ラブライブ！サンシャイン!! The School Idol Movie Over the Rainbow　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_movie_haishin.php",
 		"color": {
@@ -598,8 +604,8 @@
 		}
 	},
 	{
-		"name": "1stライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["1stライブ\nロゴ", "1st Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 1st LIVE　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_1stlive.php",
 		"color": {
@@ -615,8 +621,8 @@
 		}
 	},
 	{
-		"name": "2ndライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["2ndライブ\nロゴ", "2nd Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 2nd LIVE　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_2ndlive.php",
 		"color": {
@@ -632,15 +638,18 @@
 		}
 	},
 	{
-		"name": "3rdライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["3rdライブ\nロゴ", "3rd Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 3rd LIVE　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_3rdlive.php",
-		"reason": "ロゴに各キャラクターのイメージカラーが含まれていない"
+		"reasons": [
+			"ロゴに各キャラクターのイメージカラーが含まれていない",
+			"Image colors are not included in the logo"
+		]
 	},
 	{
-		"name": "4thライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["4thライブ\nロゴ", "4th Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 4th LIVE　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_4thlive.php",
 		"color": {
@@ -656,15 +665,17 @@
 		}
 	},
 	{
-		"name": "Aqoursアジアツアー",
+		"names": ["Aqoursアジアツアー", "Aqours Asia Tour"],
 		"ref": "ラブライブ！サンシャイン!! Aqoursアジアツアー　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_asiatour.php",
-		"reason": "イメージカラーが半透明であり、正確な色を抽出できない"
-
+		"reasons": [
+			"イメージカラーが半透明であり、正確な色を抽出できない",
+			"Image colors are semi-transparent and cannot be accurately determined"
+		]
 	},
 	{
-		"name": "5thライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["5thライブ\nロゴ", "5th Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 5th LIVE　特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_5thlive.php",
 		"color": {
@@ -680,8 +691,8 @@
 		}
 	},
 	{
-		"name": "UNIT LIVE ADVENTURE",
-		"group": "Aqours",
+		"names": ["UNIT LIVE ADVENTURE", "Unit Live Adventure"],
+		"group": "AQOURS",
 		"ref": "LOVELIVE! SUNSHINE!! UNIT LIVE ADVENTURE 2020 特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_unitlive.php",
 		"color": {
@@ -697,8 +708,8 @@
 		}
 	},
 	{
-		"name": "6thライブ\nロゴ",
-		"group": "Aqours",
+		"names": ["6thライブ\nロゴ", "6th Live Logo"],
+		"group": "AQOURS",
 		"ref": "Aqours 6th LoveLive! DOME TOUR 2020 特設サイト",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_dometour.php",
 		"color": {
@@ -714,7 +725,7 @@
 		}
 	},
 	{
-		"name": "沼津地元愛\nまつり",
+		"names": ["沼津地元愛\nまつり", "Numazu JimoAi Festival"],
 		"ref": "ラブライブ！サンシャイン!! 沼津地元愛まつり",
 		"url": "https://www.lovelive-anime.jp/uranohoshi/sp_jimoai2022.php",
 		"color": {
@@ -730,8 +741,8 @@
 		}
 	},
 	{
-		"name": "マンスリー\nランキング",
-		"group": "虹ヶ咲",
+		"names": ["マンスリー\nランキング", "Monthly Ranking"],
+		"group": "NIJI",
 		"ref": "Vote | ラブライブ！スクールアイドルフェスティバル ALL STARS（スクスタ）",
 		"url": "https://lovelive-as.bushimo.jp/vote/",
 		"color": {
@@ -747,7 +758,7 @@
 		}
 	},
 	{
-		"name": "にじよん",
+		"names": ["にじよん", "Nijiyon"],
 		"ref": "にじよん | ４コマ漫画バックナンバー | ラブライブ！虹ヶ咲学園スクールアイドル同好会",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_4komaA.php",
 		"color": {
@@ -763,8 +774,8 @@
 		}
 	},
 	{
-		"name": "1stライブ\nロゴ",
-		"group": "虹ヶ咲",
+		"names": ["1stライブ\nロゴ", "1st Live Logo"],
+		"group": "NIJI",
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 First Live “with You”",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_1stlive.php",
 		"color": {
@@ -780,15 +791,18 @@
 		}
 	},
 	{
-		"name": "2nd Live!ロゴ",
-		"group": "虹ヶ咲",
+		"names": ["2nd Live!ロゴ", "2nd Live Logo"],
+		"group": "NIJI",
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 2nd Live! Brand New Story",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_2ndlive.php",
-		"reason": "ロゴに各キャラクターのイメージカラーが含まれていない"
+		"reasons": [
+			"ロゴに各キャラクターのイメージカラーが含まれていない",
+			"Image colors are not included in the logo"
+		]
 	},
 	{
-		"name": "校内シャッフル\nフェスティバル",
-		"group": "虹ヶ咲",
+		"names": ["校内シャッフル\nフェスティバル", "Shuffle Festival"],
+		"group": "NIJI",
 		"ref": "校内シャッフルフェスティバル",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_splive.php",
 		"color": {
@@ -805,8 +819,8 @@
 		}
 	},
 	{
-		"name": "3rdライブ\nロゴ",
-		"group": "虹ヶ咲",
+		"names": ["3rdライブ\nロゴ", "3rd Live Logo"],
+		"group": "NIJI",
 		"ref": "3rd Live! School Idol Festival ～夢の始まり～",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_3rdlive.php",
 		"color": {
@@ -823,8 +837,8 @@
 		}
 	},
 	{
-		"name": "UNIT LIVE\nロゴ",
-		"group": "虹ヶ咲",
+		"names": ["UNIT LIVE\nロゴ", "Unit Live Logo"],
+		"group": "NIJI",
 		"ref": "UNIT LIVE & FAN MEETING",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_unitlive.php",
 		"color": {
@@ -843,8 +857,8 @@
 		}
 	},
 	{
-		"name": "4thライブ\nロゴ",
-		"group": "虹ヶ咲",
+		"names": ["4thライブ\nロゴ", "4th Live Logo"],
+		"group": "NIJI",
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 4th Live! ～Love the Life We Live～",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_4thlive.php",
 		"color": {
@@ -863,8 +877,8 @@
 		}
 	},
 	{
-		"name": "5thライブ\nロゴ",
-		"group": "虹ヶ咲",
+		"names": ["5thライブ\nロゴ", "5th Live Logo"],
+		"group": "NIJI",
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 5th Live! 虹が咲く場所",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/sp_5thlive.php",
 		"color": {
@@ -885,21 +899,27 @@
 		}
 	},
 	{
-		"name": "にじたび！ロゴ",
+		"names": ["にじたび！ロゴ", "NijiTabi Logo"],
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 にじたび！ TOKIMEKI FAN MEETING TOUR",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/live/live_detail.php?p=fanmeeting2023",
-		"reason": "ロゴに各キャラクターのイメージカラーが含まれていない"
+		"reasons": [
+			"ロゴに各キャラクターのイメージカラーが含まれていない",
+			"Image colors are not included in the logo"
+		]
 	},
 	{
-		"name": "6th Live!ロゴ",
-		"group": "虹ヶ咲",
+		"names": ["6th Live!ロゴ", "6th Live Logo"],
+		"group": "NIJI",
 		"ref": "ラブライブ！虹ヶ咲学園スクールアイドル同好会 6th Live! 特設サイト",
 		"url": "https://www.lovelive-anime.jp/nijigasaki/live/live_detail.php?p=sp_6thlive",
-		"reason": "画像が不可逆圧縮であり、正しい色を抽出できない"
+		"reasons": [
+			"画像が不可逆圧縮であり、正しい色を抽出できない",
+			"Lossy compression is used, so the exact color cannot be determined"
+		]
 	},
 	{
-		"name": "1stライブ\nロゴ",
-		"group": "Liella!",
+		"names": ["1stライブ\nロゴ", "1st Live Logo"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! First LoveLive! Tour ～Starlines～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/sp_1stlive/",
 		"color": {
@@ -911,8 +931,8 @@
 		}
 	},
 	{
-		"name": "2ndライブ\nロゴ(濃)",
-		"group": "Liella!",
+		"names": ["2ndライブ\nロゴ(濃)", "2nd Live Logo (dark)"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! 2nd LoveLive! ～What a Wonderful Dream!!～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/sp_2ndlive/",
 		"color": {
@@ -924,8 +944,8 @@
 		}
 	},
 	{
-		"name": "2ndライブ\nロゴ(薄)",
-		"group": "Liella!",
+		"names": ["2ndライブ\nロゴ(薄)", "2nd Live Logo (light)"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! 2nd LoveLive! ～What a Wonderful Dream!!～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/sp_2ndlive/",
 		"color": {
@@ -937,8 +957,8 @@
 		}
 	},
 	{
-		"name": "3rdライブ\nロゴ",
-		"group": "Liella!",
+		"names": ["3rdライブ\nロゴ", "3rd Live Logo"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! 3rd LoveLive! Tour ～WE WILL!!～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/live_detail.php?p=3rdlive",
 		"color": {
@@ -955,15 +975,18 @@
 		}
 	},
 	{
-		"name": "4thライブ\nロゴ",
-		"group": "Liella!",
+		"names": ["4thライブ\nロゴ", "4th Live Logo"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! 4th LoveLive! Tour ～brand new Sparkle～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/live_detail.php?p=4thlive",
-		"reason": "画像のイメージカラー部分にグラデーションがかかっている"
+		"reasons": [
+			"画像のイメージカラー部分にグラデーションがかかっている",
+			"The image color is displayed with a gradient"
+		]
 	},
 	{
-		"name": "5thライブ\nロゴ",
-		"group": "Liella!",
+		"names": ["5thライブ\nロゴ", "5th Live Logo"],
+		"group": "LIELLA",
 		"ref": "ラブライブ！スーパースター!! Liella! 5th LoveLive! ～Twinkle Triangle～",
 		"url": "https://www.lovelive-anime.jp/yuigaoka/live/live_detail.php?p=5thlive",
 		"color": {
@@ -982,15 +1005,18 @@
 		}
 	},
 	{
-		"name": "デビューイベント\nロゴ",
-		"group": "蓮ノ空",
+		"names": ["デビューイベント\nロゴ", "Debut Event Logo"],
+		"group": "HASU",
 		"ref": "ラブライブ！蓮ノ空女学院スクールアイドルクラブ デビューミニアルバム発売記念イベント「Dream Believers」特設サイト",
 		"url": "https://www.lovelive-anime.jp/hasunosora/live-event/live_detail.php?p=RME",
-		"reason": "画像が不可逆圧縮であり、正しい色を抽出できない"
+		"reasons": [
+			"画像が不可逆圧縮であり、正しい色を抽出できない",
+			"Lossy compression is used, so the exact color cannot be determined"
+		]
 	},
 	{
-		"name": "1stライブ\nロゴ",
-		"group": "蓮ノ空",
+		"names": ["1stライブ\nロゴ", "1st Live Logo"],
+		"group": "HASU",
 		"ref": "ラブライブ！蓮ノ空女学院スクールアイドルクラブ 1st Live Tour ～RUN！CAN！FUN！～",
 		"url": "https://lovelive-anime.jp/hasunosora/live-event/live_detail.php?p=RCF",
 		"color": {
@@ -1003,8 +1029,8 @@
 		}
 	},
 	{
-		"name": "2ndライブ\nロゴ",
-		"group": "蓮ノ空",
+		"names": ["2ndライブ\nロゴ", "2nd Live Logo"],
+		"group": "HASU",
 		"ref": "ラブライブ！蓮ノ空女学院スクールアイドルクラブ 2nd Live Tour 〜Blooming with ○○○〜",
 		"url": "https://www.lovelive-anime.jp/hasunosora/live-event/live_detail.php?p=BLW",
 		"color": {

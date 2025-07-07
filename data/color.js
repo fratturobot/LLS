@@ -111,6 +111,18 @@ const Cpy = (temp) => {
 	if(event.ctrlKey){ navigator.clipboard.writeText(temp.innerHTML);}
 }
 
+function getCharacterName(idol) {
+	if(lang_select) {
+		if (idol.endsWith("M") || idol.endsWith("Y")) {
+			return idol.substr(0, idol.length - 1);
+		} else {
+			return idol;
+		}
+	} else {
+		return CharacterName[idol];
+	}
+}
+
 //■テーブルを描画
 const CreateColorListTable = (idols, htmlId) => {
 	//指定されたメンバーが1人でも含まれるカラーデータセットを取得
@@ -130,14 +142,14 @@ const CreateColorListTable = (idols, htmlId) => {
 		<thead>
 			<tr>
 				<th class="table-color-list-TL"></th>
-				${idols.map(idol => `<th class="table-color-list-TR" style="width:${widthTableColumn}px">${CharacterName[idol]}</th>`).join("")}
+				${idols.map(idol => `<th class="table-color-list-TR" style="width:${widthTableColumn}px">${getCharacterName(idol)}</th>`).join("")}
 			</tr>
 		</thead>
 	<tbody class="table-color-list-main">`;
 	
 	//メイン
 	const main = ColorDataSet.map( temp => {
-		return `<tr><th class="table-color-list-BL">${temp.name.replace('\n', '<br>')}</th>`
+		return `<tr><th class="table-color-list-BL">${temp.names[lang_select].replace('\n', '<br>')}</th>`
 		+ idols.map( idol => {
 			if(!(idol in temp["color"])){
 				return `<td class="none">－</td>`;
@@ -168,23 +180,23 @@ function DrawReferences() {
 	//色データがあるもの
 	const referenceList = window["JSON-color"].map( site => {
 		if("ref" in site && "color" in site){
-			return `<li>${site.name.replace('\n', '')} ${'group' in site ? '(' + site.group + ')' : ""}
-			<ul><li>出典：${MakeLink(site.url, site.ref)}</li></ul></li>`;
+			return `<li>${site.names[lang_select].replace('\n', lang_select ? ' ' : '')} ${'group' in site ? '(' + Localization.get(site.group) + ')' : ""}
+			<ul><li>${Localization.get('SOURCE')}：${MakeLink(site.url, site.ref)}</li></ul></li>`;
 		}
 	}).join('');
 	
 	//色データがないもの
 	const unpublishedList = window["JSON-color"].map( site => {
 		if(!("color" in site)){
-			return `<li>${site.name.replace('\n', '')} ${'group' in site ? '(' + site.group + ')' : ""}
+			return `<li>${site.names[lang_select].replace('\n', lang_select ? ' ' : '')} ${'group' in site ? '(' + Localization.get(site.group) + ')' : ""}
 				<ul><li>URL：${MakeLink(site.url, site.ref)}</li>
-				<li>理由：${site.reason}</li></ul>`;
+				<li>${Localization.get('REASON')}：${site.reasons[lang_select]}</li></ul>`;
 		}
 	}).join('');
 	
 	document.getElementById("ReferencesContainer").innerHTML =
 	`<ul>${referenceList}</ul>
-	<h3>掲載できなかったもの</h3>
+	<h3>${Localization.get('MISSING_COLORS')}</h3>
 	<ul>${unpublishedList}</ul>`
 }
 
@@ -206,6 +218,22 @@ function initialize () {
 	CreateColorListTable(MemberIdMusical, "TableMusical");
 	CreateColorListTable(MemberIdYohane,  "TableYohane");
 	DrawReferences();
+
+	function updateSectionHeaders() {
+		document.querySelectorAll('#ColorList section').forEach(c => {
+			const groupId = c.id.substring(6).toUpperCase();
+			const groupName = Localization[`${groupId}_LONG`] ? Localization.get(`${groupId}_LONG`) : Localization.get(groupId);
+			c.querySelector('h3').textContent = groupName;
+		});
+	}
+
+	if(lang_select) {
+		updateSectionHeaders();
+	}
+
+	document.addEventListener('SetLanguage', () => {
+		updateSectionHeaders();
+	});
 	//デバック用
 	if(isDebugMode) {
 		//描画時間の出力
