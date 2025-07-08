@@ -48,7 +48,7 @@ const TagData = {
 	
 	"Season":   {"name": "季節の行事", "r":100, "g":140, "b":160, "style": "square"},
 	"Birthday": {"name": "誕生日",     "r":100, "g":140, "b":160, "style": "square"},
-	"Live":     {"name": "ライブ",     "r":100, "g":140, "b":160, "style": "square"}
+	"Event":    {"name": "イベント",   "r":100, "g":140, "b":160, "style": "square"}
 };
 
 //■ソート対象
@@ -56,6 +56,7 @@ const SortTarget = [
 {"name": "2023年12月", "condition": "date,2023/12/01,2023/12/31"},
 {"name": "2024年1月", "condition": "date,2024/01/01,2024/01/31"},
 {"name": "2024年2月", "condition": "date,2024/02/01,2024/02/29"},
+{"name": "2024年3月", "condition": "date,2024/03/01,2024/03/31"},
 {"name": "----"},
 {"name": "出演：高坂 穂乃果",            "condition": "tag,Honoka"},
 {"name": "出演：絢瀬 絵里",              "condition": "tag,Eli"},
@@ -102,7 +103,7 @@ const SortTarget = [
 {"name": "----"},
 {"name": "テーマ：季節の行事", "condition": "tag,Season"},
 {"name": "テーマ：誕生日", "condition":     "tag,Birthday"},
-//{"name": "テーマ：リアルイベント", "condition": "tag,Event"},
+{"name": "テーマ：イベント", "condition": "tag,Event"},
 //{"name": "----"},
 //{"name": "シリーズ：堕天使ヨハネ", "condition": "tag,Yohane"},
 ];
@@ -111,11 +112,6 @@ const SortTarget = [
 //■条件に合致するストーリーを抜き出してリストアップ
 function DrawStoryList(conditions){
 	const TimeOutputStart = performance.now();
-	const DecorateText = ( text => {
-		return text
-		// {{L:タイトル:URL}} の部分を、リンクに置換する
-		.replace(/\{\{[lL]:([^:]*):([^}]*)\}\}/g, '<a href="$2" class="pc-exclusive-link" target="_blank">$1<\/a>');
-	});
 
 	let storyResult = new Array();
 	if(conditions === "undefined"){ //絞り込み条件が指定されていない場合、キャンセル
@@ -151,7 +147,7 @@ function DrawStoryList(conditions){
 			<div class="story-date">${story.date}</div>
 			<div class="story-titleContainer">
 				<div ${storyTitleAtttribute}>${story.title}</div>
-				<div class="story-memo">${('memo' in story ? DecorateText(story.memo) : '')}</div>
+				<div class="story-memo">${('memo' in story ? convertMarkup(story.memo) : '')}</div>
 			</div>
 			<div class="story-tags">${tagContent}</div>
 			</div>
@@ -168,38 +164,52 @@ function DrawStoryList(conditions){
 function MakeModal(id){
 	const result = window['JSON-llsif2-theater'].find(temp => temp.id === id);
 	if(!result){ return false;}
+	result.text = convertMarkup(result.text);
 	
-	//タイトル
+	//タイトルを表示
 	document.getElementById("Modal-Title").innerHTML = result.title;
 	
-	//{{note:1:2}}の部分を注釈にする
+	//注釈リストの作成
 	let noteList = [];
-	const pattern = new RegExp(/\{\{note:(.*?):(.*?)\}\}/g);
+	const pattern = new RegExp(/<span class="_pre-note" data-note="(.+)">(.+)<\/span>/g);
 	while ((match = pattern.exec(result.text)) !== null) {
-		noteList.push(match[2]);
+		noteList.push(match[1]);
 	}
-	//テキスト
+
+	//本文の置換
 	let noteNumber = 1;
-	const TextLog = result.text.replace(pattern, function(match, s1, s2){
-		return `<span class="underline">${s1}<sup style="color:purple">*${noteNumber}</sup></span>{{notenum:${noteNumber++}}}`
-	}).split('\n');
-	document.getElementById("Modal-Text").innerHTML = TextLog.map( (text, index) => {
+	const processedText = result.text.replace(pattern, function(match, s1, s2) {
+        return `<span class="underline">${s2}<sup style="color:purple">*${noteNumber}</sup></span>{{notenum:${noteNumber++}}}`
+    });
+    const textLines = processedText.split('\n');
+	
+	//本文の描画
+	document.getElementById("Modal-Text").innerHTML = textLines.map( (text, index) => {
 		text = text.split('\t');
 		
 		let currentNote = [];
-		text[1] = text[1].replace(/\{\{notenum:(\d+)\}\}/g, function(match, noteIndex){
-			if(match) { currentNote.push(`<span>*${noteIndex}： ${noteList[parseInt(noteIndex, 10)-1]}</span>`);}
-			return ``;
+        const processedLine = text.map(x => {
+			x = x.replace(/\{\{notenum:(\d+)\}\}/g, function(match, noteIndex){
+				if(match) { currentNote.push(`<span>*${noteIndex}： ${noteList[parseInt(noteIndex, 10)-1]}</span>`);}
+				return '';
+			});
+			return x;
 		});
 		
-		return DrawCharName(result.tags[text[0]]) + `<p>${text[1]}</p>`
+		const CharacterName = (isNaN(text[0]) ? text[0] : DrawCharName(result.tags[parseInt(text[0],10)]));
+		
+		return CharacterName
+		+ (processedLine.length >= 2 ? `<p>${processedLine[1]}</p>` : '')
 		+ (currentNote.length ? `<p class="note">${currentNote.join('<br>')}</p>` : '')
-		+ (index === TextLog.length-1 ? '' : '<hr>');
+		+ (index === result.text.length-1 ? '' : '<hr>');
 	}).join("");
 	
 	//ポップアップを表示
+    document.getElementById("Modal").style.paddingRight = `${window.innerWidth - document.documentElement.clientWidth}px`;
 	document.getElementById("Modal").classList.remove("fadeout");
 	document.getElementById("Modal").style.display = "flex";
+    document.body.style.paddingRight = `${window.innerWidth - document.documentElement.clientWidth}px`;
+	document.body.style.overflow = 'hidden';
 }
 
 //■モーダルウィンドウを閉じる
@@ -210,6 +220,8 @@ function CloseModal(target){
 			return false;
 		}
 	}
+	document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
 	ModalBG.classList.add("fadeout");
 	setTimeout(function(){
 		document.getElementById("Modal-ReaderBox").scrollTop = 0;
@@ -243,6 +255,11 @@ function initialize() {
 			(上のプルダウンメニューから、期間を選んでください)
 		</div>`;
 	
+	//Escキーでモーダルウィンドウを閉じる
+	document.addEventListener('keydown', function(e){
+		if(e.key === 'Escape'){ CloseModal() };
+	});
+
 	//デバック用
 	if(isDebugMode) {
 		//データの不具合チェック
@@ -274,6 +291,7 @@ function initialize() {
 			}
 			dateTemp = story.date;
 			if(!('text' in story)){ return acc;}
+			if(story['title'] === ''){ return acc;}
 			if(story['text'] === ''){ return acc;}
 			const TextTemp = story.text.split('\n');
 			return acc + TextTemp.reduce( (acc2, txt, index2) => {

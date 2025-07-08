@@ -6,20 +6,20 @@
 <meta name="description" content="スクスタで配信されていた「毎日劇場」のまとめです。">
 
 <meta property="og:url" content="https://ratius.github.io/LLS/sifas_theater.html">
-<meta property="og:title" content="スクスタ 毎日劇場 アーカイブ | ラブライブ！ストレージ">
+<meta property="og:title" content="スクスタ 毎日劇場アーカイブ | ラブライブ！ストレージ">
 <meta property="og:type" content="website">
 <meta property="og:description" content="スクスタで配信されていた「毎日劇場」のまとめです。">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ratius55">
 <meta name="twitter:creator" content="@ratius55">
-<meta name="twitter:title" content="スクスタ 毎日劇場 アーカイブ | ラブライブ！ストレージ">
+<meta name="twitter:title" content="スクスタ 毎日劇場アーカイブ | ラブライブ！ストレージ">
 <meta name="twitter:description" content="スクスタで配信されていた「毎日劇場」のまとめです。">
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#e50080">
 
-<title>スクスタ 毎日劇場 データベース | ラブライブ！ストレージ</title>
+<title>スクスタ 毎日劇場アーカイブ | ラブライブ！ストレージ</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
 <link rel="stylesheet" href="main_gen2.css">
 <style><!--
@@ -70,6 +70,8 @@ p{
 	border-bottom: solid 1px #d0c0c8;
 }
 .story-title { /*タイトル欄*/
+	display: grid;
+	align-items: center;
 	width: 40%;
 	color: #403038;
 	font-weight: bold;
@@ -110,7 +112,7 @@ p{
 	margin: 15px 40px;
 	background-color: #a47;
 	display: grid;
-	justify-items: center;
+	justify-content: center;
 	align-items: center;
 	overflow-x: hidden;
 }
@@ -138,6 +140,19 @@ p{
 #Modal-Text hr {
 	height: 0px; 
 	border-top: 2px dotted #ccc;
+}
+
+.note {
+	background-color: #e8d8e0;
+	border: 1px solid #cbd;
+	color: #936;
+	font-size: small;
+	padding: 4px;
+}
+.underline {
+	text-decoration: underline solid #96c;
+	text-underline-offset: 10%;
+	padding-right: 3px;
 }
 
 #Modal-CloseButton {
@@ -231,7 +246,7 @@ p{
 <body class="left">
 <main>
 	<header>
-		<h1 id="TitleName">スクスタ 毎日劇場 データベース</h1>
+		<h1 id="TitleName">スクスタ 毎日劇場アーカイブ</h1>
 	</header>
 	<nav class="right-menu">
 		<ul>
@@ -255,7 +270,7 @@ p{
 		<h2>毎日劇場一覧</h2>
 		<p>
 			下部のプルダウンメニューから見たいカテゴリを選択すると、該当するストーリータイトル・登場キャラクター等が表示されます。<br>
-			タイトル部分が濃くなっているものは、タイトル部分をクリックするとテキストが表示されます。
+			タイトルが表示されている濃い五角形の部分をクリックするとテキストが表示されます。
 		</p>
 		<div id="PullDown-Container">
 			<label for="PullDownMenu">絞り込み</label>
@@ -287,6 +302,30 @@ p{
 		<p>下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
 		<div class="history-container">
 			<details open>
+				<summary><span class="date">2024/12/14</span> - 全話掲載完了</summary>
+				<div>
+					<span class="icon-new"></span>全1245話の本文を閲覧できるようになりました！
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/12/07</span> - キー入力対応</summary>
+				<div>
+					<span class="icon-new"></span>Escキーでモーダルウィンドウを閉じられるようになりました
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/11/30</span> - モーダルウィンドウの挙動修正</summary>
+				<div>
+					<span class="icon-fix"></span>モーダルウィンドウ表示中、背景をスクロールできてしまう問題を修正
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/01/18</span> - 注釈表示機能追加</summary>
+				<div>
+					<span class="icon-new"></span>注釈の表示機能を追加
+				</div>
+			</details>
+			<details>
 				<summary class="important"><span class="date">2024/01/13</span> - リニューアル</summary>
 				<div>
 					<span class="icon-new"></span>CSSをアップデート<br>

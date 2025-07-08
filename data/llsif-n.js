@@ -170,7 +170,7 @@ function initialize() {
 	document.addEventListener('SetLanguage', () => {
 		document.getElementById('PullDownMenu').querySelectorAll('option').forEach(opt => {
 			if (opt.value >= 0) {
-				opt.text = NData[opt.value].names[lang_select];
+				opt.text = window['JSON-llsif-n'][opt.value].names[lang_select];
 			} else {
 				opt.text = Localization.get('TRANSFER_SELECT_DEFAULT');
 			}

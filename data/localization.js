@@ -71,7 +71,35 @@ const Localization = {
     '毎月行われていたアンケートの集計や、便利リンクを掲載しています。',
     'Compilation of the monthly survey results, with links to each one.'
   ],
+  'NIJI_DRAMA_TITLE': [
+    '虹ヶ咲学園 <wbr>スペシャルドラマまとめ',
+    'Nijigasaki Special Drama'
+  ],
+  'NIJI_DRAMA_DESC': [
+    '公式チャンネルでよく配信されていた「スペシャルドラマ」のまとめです。',
+    'Summary of "special dramas" that were released via official channels'
+  ],
   'HASU_SERIES': [
+    '蓮ノ空女学院スクールアイドルクラブ',
+    'Hasunosora School Idol Club'
+  ],
+  'HASU_SEHASU_TITLE': [
+    '蓮ノ空 <wbr>せーはす動画まとめ',
+    'Ready, Set, Go! Hasunosora!'
+  ],
+  'HASU_SEHASU_DESC': [
+    'YouTube上で連載されている「せーので！はすのそら！」の動画のまとめです。',
+    'Compilation of "Ready, Set, Go! Hasunosora!" YouTube Videos'
+  ],
+  'HASU_RADIO_TITLE': [
+    '蓮ノ空 <wbr>みらくらラジオまとめ',
+    'Mira-Cra Radio Archive'
+  ],
+  'HASU_RADIO_DESC': [
+    '公式チャンネルで定期配信されているWebラジオ「みらくら○○室ラジオ」のまとめです。',
+    'Summary of Mira-Cra ○○ Radio broadcasts'
+  ],
+  'LINKLIKE_SERIES': [
     'Link！Like！ラブライブ！',
     'Link! Like! Love Live!'
   ],
@@ -92,8 +120,8 @@ const Localization = {
     'SIF2 Daily Theatre Archive'
   ],
   'SIF2_THEATER_DESC': [
-    'スクフェス2の毎日劇場の一覧です。本文も収録。',
-    'Collection of SIF2 Daily Theatre episodes.'
+    'スクフェス2で配信されていた毎日劇場のアーカイブです。本文も全て収録済。',
+    'Collection of SIF2 Daily Theatre episodes. All main text is included.'
   ],
   'SIF_SERIES': [
     'スクフェス1',
@@ -152,11 +180,11 @@ const Localization = {
     'Synopses of the story chapters and which characters appeared therein.'
   ],
   'DAILY_THEATRE_TITLE': [
-    '毎日劇場<wbr>データベース',
+    'スクスタ <wbr>毎日劇場アーカイブ',
     'SIFAS Daily Theatre'
   ],
   'DAILY_THEATRE_DESC': [
-    'スクスタの毎日劇場の一覧です。グループを超えた掛け合いをお楽しみあれ！',
+    'スクスタで配信されていた毎日劇場のアーカイブ。グループを超えた掛け合いをお楽しみあれ！',
     'List of Daily Theatre episodes.  Enjoy the cross-generation chats!'
   ],
   'SYSTEM_SERIES': [
@@ -245,6 +273,10 @@ const Localization = {
   'YOHANE': [
     '幻日のヨハネ',
     'Yohane the Parhelion'
+  ],
+  'BLUEBIRD': [
+    'イキヅライブ！',
+    'Love Live! Bluebird'
   ],
   // COLOR PAGE
   'COLOR_PAGE_TITLE': [
@@ -491,7 +523,7 @@ const Localization = {
   ],
   // other data
   'TRANSLATED_PAGES': {
-    'llsif_arena.html': true,
+    'llsif-arena.html': true,
     'llsif-n.html': true,
     'color.html': true
   }

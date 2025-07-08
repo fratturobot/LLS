@@ -5,10 +5,12 @@
 
 <meta name="description" content="アプリ「Link! Like! ラブライブ！」で実施された配信のまとめ。">
 
-<meta property="og:url" content="https://ratius.github.io/LLS/hasu-connect.html">
-<meta property="og:title" content="リンクラ スクールアイドルコネクトまとめ">
 <meta property="og:type" content="website">
+<meta property="og:title" content="リンクラ スクールアイドルコネクトまとめ">
+<meta property="og:url" content="https://ratius.github.io/LLS/hasu-connect.html">
+<meta property="og:image" content="https://ratius.github.io/LLS/card/hasu-connect.jpg">
 <meta property="og:description" content="アプリ「Link! Like! ラブライブ！」で実施された配信のまとめ。">
+<meta property="og:site_name" content="ラブライブ！ストレージ">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ratius55">
@@ -22,147 +24,101 @@
 <title>リンクラ スクールアイドルコネクトまとめ | ラブライブ！ストレージ</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
 <link rel="stylesheet" href="main_gen2.css">
-<style><!--
-/* 絞り込み */
-#PullDown-Container {
-	font-size: x-large;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-
-#PullDownList {
-	max-width: 100%;
-	border: solid 2px #b9a;
-	font-size: x-large;
-	font-weight: bold;
-	padding: 5px;
-	margin-right: 10px;
-}
-
-/* 動画一覧 */
-article {
-	width: 100%;
-	display: grid;
-	flex-wrap: wrap;
-}
-
-article.cancelled {
-	background-color: #ddd;
-}
-div.cancelled {
-	background-color: #ccc;
-}
-
-article:not(.cancelled) .article-box-title {
-	background-color: #fde;
-}
-
-.article-box-date, .article-box-title, .article-box-desc, .article-box-tags {
-	padding: 4px 10px;
-}
-.article-box-date, .article-box-tube{
-	display: flex;
-	align-items: center;
-}
-.article-box-date{ /*日付入力欄*/
-	font-size: 95%;
-	font-weight: bold;
-	background-color: #eee;
-	color: #666;
-}
-.article-box-title { /*タイトル*/
-	font-weight: bold;
-	border-bottom: solid 1px #bbb;
-}
-.article-box-desc { /*説明文*/
-	font-size: small;
-	border-bottom: solid 1px #bbb;
-}
-
-.setlist { /*セットリスト*/
-	width: min(300px, 100%);
-	border: solid 1px #9ce;
-}
-.setlist-summary {
-	margin: 0;
-	padding: 2px 6px;
-	background-color: #d0f0ff;
-}
-.setlist-ol {
-	margin: 5px 0;
-	padding-left: 30px;
-}
-.setlist-mc {
-	color: #69c;
-}
-
-/* ■スマートフォン向けレイアウト */
-@media screen and (max-width: 599px) {
-	article {
-		grid-template-columns: auto 70px;
-	}
-	article:not(:last-child) {
-		border-bottom: solid 3px #999;
-	}
-	.article-box-tube:not(.cancelled) {
-		background-color: #fde;
-	}
+<link rel="stylesheet" href="./data/videolist.css">
+<script><!--
+const tagData = {
+	"meets"     : {"name": "With×MEETS" , "r":160, "g":112, "b": 96, "style": "button-square"},
+	"live"      : {"name": "Fes×LIVE"   , "r": 80, "g":128, "b":128, "style": "button-square"},
+	"cancelled" : {"name": "配信中止"    , "r":128, "g":128, "b":128, "style": "button-square"},
+	"YouTube" : {"name": "YouTubeライブ", "r":224, "g":128, "b": 128, "style": "button-square"},
+	"SayakaRadio" : {"name": "村野さやかのラジオ", "r":160, "g":112, "b": 96, "style": "button-square"},
+	"birthday": {"name": "誕生日", "r":160, "g":112, "b": 96, "style": "button-square"},
+	"karaoke" : {"name": "カラオケ配信", "r":160, "g":112, "b": 96, "style": "button-square"},
 	
-	.article-box-date:before {
-		content: "▼";
-	}
-	.article-box-date {
-		width: 100%;
-		border-bottom: solid 1px #c0b0b8;
-	}
-	.article-box-tube {
-		border-bottom: solid 1px #bbb;
-	}
-	.article-box-date, .article-box-desc, .article-box-tags{
-		grid-column: span 2;
-	}
-	.pc-exclusive-link {
-		text-decoration: none;
-		color: inherit;
-		cursor: default;
-		pointer-events: none;
-	}
-}
+	"Kaho"    : {"name": "花帆"   , "r":248, "g":181, "b":  0, "style": "button-round"},
+	"Sayaka"  : {"name": "さやか" , "r": 83, "g":131, "b":195, "style": "button-round"},
+	"Kozue"   : {"name": "梢"     , "r":104, "g":190, "b":141, "style": "button-round"},
+	"Tsuzuri" : {"name": "綴理"   , "r":186, "g": 38, "b": 54, "style": "button-round"},
+	"Rurino"  : {"name": "瑠璃乃" , "r":231, "g": 96, "b":158, "style": "button-round"},
+	"Megumi"  : {"name": "慈"     , "r":200, "g":194, "b":198, "style": "button-round"},
+	"Ginko"   : {"name": "吟子"   , "r":162, "g":215, "b":221, "style": "button-round"},
+	"Kosuzu"  : {"name": "小鈴"   , "r":250, "g":215, "b":100, "style": "button-round"},
+	"Hime"    : {"name": "姫芽"   , "r":157, "g":141, "b":226, "style": "button-round"},
+	"Ceras"   : {"name": "セラス" , "r":245, "g":100, "b": 85, "style": "button-round"},
+	"Izumi"   : {"name": "泉"     , "r": 30, "g":190, "b":205, "style": "button-round"},
 
-/* ■PC向けレイアウト */
-@media screen and (min-width: 600px) {
-	article {
-		grid-template-columns: 120px auto 130px;
-		border-right: solid 1px #999;
-		border-bottom: solid 1px #999;
-	}
+	"Izumi_Guest" : {"name": "泉"     , "r": 64, "g": 64, "b": 64, "style": "button-hexa"}, //泉 (ライバル)
+	"Ceras_Guest" : {"name": "セラス" , "r": 64, "g": 64, "b": 64, "style": "button-hexa"} //セラス (ライバル)
+};
 
-	.article-box-date {
-		justify-content: center;
-		width: 120px;
-		grid-row: span 3;
-		border-right: solid 1px #999;
-	}
-	.article-box-tube {
-		justify-content: center;
-		width: 130px;
-		grid-row: span 3;
-		border-left: solid 1px #bbb;
-	}
-	.article-box-tube a {
-		width: 124px;
-		height: 72px;
-		overflow: hidden;
-		border: solid 2px #936;
-	}
-	.article-box-tube img {
-		width: 120px;
-		height: 68px;
-		object-fit: cover;
-	}
+const filterTargets = [
+	{"name": "debug", "condition": "after:2024-06-25 max:10"},
+	{"name": "debug-配信場所なし", "condition": "after:2025-05-28 tag:meets extag:cancelled extag:room-club extag:room-lesson extag:room-Kaho extag:room-Sayaka extag:room-Kozue extag:room-Tsuzuri extag:room-Rurino extag:room-Megumi extag:room-Ginko extag:room-Kosuzu extag:room-Hime extag:room-Ceras extag:room-Izumi"},
+	{"name": "103期 上半期（2023年4月 - 2023年9月）",  "condition": "after:2023-04-01 before:2023-09-30"},
+	{"name": "103期 下半期（2023年10月 - 2024年3月）", "condition": "after:2023-10-01 before:2024-03-31"},
+	{"name": "104期 上半期（2024年4月 - 2024年9月）",  "condition": "after:2024-04-01 before:2024-09-30"},
+	{"name": "104期 下半期（2024年10月 - 2025年3月）", "condition": "after:2024-10-01 before:2025-03-31"},
+	{"name": "105期 上半期（2025年4月 - 2025年9月）",  "condition": "after:2025-04-01 before:2025-09-30"},
+//	{"name": "105期 下半期（2025年10月 - 2026年3月）", "condition": "after:2025-10-01 before:2026-03-31"},
+	{"name": "----"},
+	{"name": "タグ：Fes×LIVE", "condition": "tag:live"},
+	{"name": "タグ：YouTubeライブ", "condition": "tag:YouTube"},
+	{"name": "タグ：村野さやかのラジオ", "condition": "tag:SayakaRadio"},
+	{"name": "タグ：カラオケ配信", "condition": "tag:karaoke"},
+	{"name": "タグ：誕生日", "condition": "tag:birthday"},
+	{"name": "----"},
+	{"name": "配信場所：花帆の部屋",   "condition": "tag:room-Kaho"},
+	{"name": "配信場所：さやかの部屋", "condition": "tag:room-Sayaka"},
+	{"name": "配信場所：梢の部屋",     "condition": "tag:room-Kozue"},
+	{"name": "配信場所：綴理の部屋",   "condition": "tag:room-Tsuzuri"},
+	{"name": "配信場所：瑠璃乃の部屋", "condition": "tag:room-Rurino"},
+	{"name": "配信場所：慈の部屋",     "condition": "tag:room-Megumi"},
+	{"name": "配信場所：吟子の部屋",   "condition": "tag:room-Ginko"},
+	{"name": "配信場所：小鈴の部屋",   "condition": "tag:room-Kosuzu"},
+	{"name": "配信場所：姫芽の部屋",   "condition": "tag:room-Hime"}
+];
+
+const LLSPLayoutTemplate = (entry) => {
+    const isCancelled = (entry['tags'].includes('cancelled') ? 'cancelled' : '');
+
+    const videoLength = (typeof entry['length'] === 'number' ?
+        `<span class="length pc-only">本編：${convertSecondsToHHMMSS(entry['length'])}</span>`
+        :
+        (Array.isArray(entry['length']) ?
+            (entry['length'].length >= 0 ?
+                `<span class="length pc-only">本編：${convertSecondsToHHMMSS(entry['length'][0])}</span>`
+                : '')
+            + (entry['length'].length > 1 ?
+                `<span class="length pc-only">AFTER：${convertSecondsToHHMMSS(entry['length'][1])}</span>`
+                : '')
+            : '')
+    );
+    const videoContent = ('tube' in entry && entry['tube'] ? `${LLSProcessor.getYouTubeLink(entry['tube'], entry['title'])}${videoLength}` : '');
+    const descContent = (typeof entry['desc'] === 'string' && entry['desc'] !== "" ? `<div class="desc">${convertMarkup(entry['desc'])}</div>` : '');
+	const memoContent = (typeof entry['memo'] === 'string' && entry['memo'] !== "" ? convertMarkup(entry['memo']) : '');
+	
+    const setlistContent = (typeof entry['setlist'] === 'object' && entry['setlist'].length ?
+        `<details class="setlist">
+		<summary class="setlist-summary">${'setlistAlt' in entry ? entry['setlistAlt'] : "セットリスト"} (クリックで展開)</summary>
+		<ol class="setlist-ol">
+			${entry['setlist'].map(program =>
+            `<li>${(program.startsWith("MC") ? `<i class="setlist-mc">${program}</i>` : program)}</li>`).join('')}
+		</ol>
+	</details>`
+        : '');
+
+	const tagsContent = entry['tags'].map(tag => (tag in tagData ? createStyledTag(tagData[tag], tag) : '')).join('');
+	
+	return `<article class="${isCancelled}">
+		<div class="article-box-date">${entry['date']}</div>
+		<div class="article-box-title ${isCancelled}">${entry['title']}</div>
+		<div class="article-box-desc">${descContent + memoContent + setlistContent}</div>
+		<div class="article-box-tags">${tagsContent}</div>
+		${videoContent !== "" ? `<div class="article-box-tube ${isCancelled}">${videoContent}</div>` : ''}
+	</article>`;
 }
---></style>
-<script src="data/loader.js" data-src="data/hasu-connect.js,data/hasu-connect.json,data/common-library.js"></script>
+--></script>
+<script src="data/loader.js" data-src="data/hasu-connect.json,data/common-library.js,module/LLS-processor.js"></script>
 </head>
 <body class="left">
 <main>
@@ -173,7 +129,7 @@ article:not(.cancelled) .article-box-title {
 				<li><strong>目次</strong></li>
 				<li><hr></li>
 				<li><a href="#Summary">概要</a></li>
-				<li><a href="#CastedLiveList">動画一覧</a></li>
+				<li><a href="#VideoList">動画一覧</a></li>
 				<li><a href="#History">更新履歴</a></li>
 			</ul>
 		</nav>
@@ -186,25 +142,19 @@ article:not(.cancelled) .article-box-title {
 		</p>
 	</section>
 
-	<section id="CastedLiveList">
-		<h2 class="muse">動画一覧</h2>
-		<p>下部のプルダウンメニューから期間を選択すると、その期間に配信された動画の情報が表示されます。
+	<section id="VideoList">
+		<h2>動画一覧</h2>
+		<p>下部のプルダウンメニューから絞り込み条件を選択すると、条件に合致する配信の情報が表示されます。
 		</p>
 		<p>「動画リンク」列のサムネイル、または「動画へ」と書かれたリンクをクリック/タップすると、YouTubeの動画を開きます。<br>
-		タグのキャラクター欄は、実際に配信に参加したメンバーを表しています。</p>
-		<div id="PullDown-Container">
-			<label for="PullDownList">絞り込み</label>
-			<select id="PullDownList" onChange="DrawLiveList(this.value)">
+		タグ欄の出演キャラクターは実際に出演したかどうかでタグを付与しているため、アプリ内の絞り込み（With Starの割り振り対象かどうか）とは結果が異なる場合があります。ご了承ください。</p>
+		<div id="Filter-Container">
+			<label for="LLSP-Filter">絞り込み</label>
+			<select id="LLSP-Filter">
 				<option value="">(期間を選択)</option>
-				<option value="date,2023-04-01,2023-09-30">103期 上半期（2023年4月 - 2023年9月）</option>
-				<option value="date,2023-10-01,2024-03-31">103期 下半期（2023年10月 - 2024年3月）</option>
-				<!--<option value="date,2024-04-01,2024-09-30">104期 上半期（2024年4月 - 2024年9月）</option>
-				<option value="date,2024-10-01,2025-03-31">104期 下半期（2024年10月 - 2025年3月）</option>
-				<option value="date,2025-04-01,2025-09-30">105期 上半期（2025年4月 - 2025年9月）</option>
-				<option value="date,2025-10-01,2026-03-31">105期 下半期（2025年10月 - 2026年3月）</option>-->
 			</select>
 		</div>
-		<div id="LiveList" class="output-box output-box-default">
+		<div id="LLSP-Result" class="output-box output-box-default">
 			このページでは、情報を表示するためにJavaScriptを使用します。<br>
 			いつまで待ってもこの表示が消えない場合、JavaScriptがオフになっている可能性があります。<br>
 			お手数ですが、JavaScriptの実行を許可した上でページを再読み込みしてください。<br>
@@ -212,10 +162,35 @@ article:not(.cancelled) .article-box-title {
 	</section>
 
 	<section id="History">
-		<h2 class="niji">更新履歴（動画掲載以外）</h2>
+		<h2>更新履歴（動画一覧への掲載以外）</h2>
 		<p>下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
 		<div class="history-container">
 			<details open>
+				<summary class="important"><span class="date">2025/04/11</span> - 105期新入生参戦に伴う調整</summary>
+				<div>
+					<span class="icon-new"></span>セラス、泉の名前表示に対応<br>
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/06/25</span> - 配信概要掲載</summary>
+				<div>
+					<span class="icon-new"></span>アプリ内から見られる配信概要文を掲載
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/05/08</span> - 配信時間掲載</summary>
+				<div>
+					<span class="icon-new"></span>配信時間の情報を掲載（PC向けレイアウトのみ。順次対応予定）
+				</div>
+			</details>
+			<details>
+				<summary class="important"><span class="date">2024/04/14</span> - 104期新入生参戦に伴う調整</summary>
+				<div>
+					<span class="icon-new"></span>吟子、小鈴、姫芽の名前表示に対応<br>
+					<span class="icon-fix"></span>絞り込みの不具合で、「9月Fes×LIVE振り返り配信」が検索結果に表示されなかった不具合を修正
+				</div>
+			</details>
+			<details>
 				<summary><span class="date">2024/01/10</span></summary>
 				<div>
 					<span class="icon-fix"></span>データ読み込み周りの仕様を変更

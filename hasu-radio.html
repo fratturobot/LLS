@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<meta charset="utf-8">
+
+<meta name="description" content="YouTubeの蓮ノ空女学院スクールアイドルクラブ公式チャンネルで連載されている「みらくら○○室ラジオ」動画のまとめ。">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="蓮ノ空 みらくらラジオまとめ">
+<meta property="og:url" content="https://ratius.github.io/LLS/hasu-radio.html">
+<meta property="og:image" content="https://ratius.github.io/LLS/card/hasu-radio.jpg">
+<meta property="og:description" content="YouTubeの蓮ノ空女学院スクールアイドルクラブ公式チャンネルで連載されている「みらくら○○室ラジオ」動画のまとめ。">
+<meta property="og:site_name" content="ラブライブ！ストレージ">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="蓮ノ空 みらくらラジオまとめ">
+<meta name="twitter:description" content="YouTubeの蓮ノ空女学院スクールアイドルクラブ公式チャンネルで連載されている「みらくら○○室ラジオ」動画のまとめ。">
+<meta name="twitter:site" content="@ratius55">
+<meta name="twitter:creator" content="@ratius55">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e50080">
+
+<title>蓮ノ空 みらくらラジオまとめ | ラブライブ！ストレージ</title>
+<link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
+<link rel="stylesheet" href="main_gen2.css">
+<link rel="stylesheet" href="data/videolist.css">
+<script><!--
+//■データリスト
+const tagData = {
+	"Kan"      : {"name": "菅叶和"     , "r":231, "g": 96, "b":158, "style": "button-round"},
+	"Tsukine"  : {"name": "月音こな"   , "r":200, "g":194, "b":198, "style": "button-round"},
+	"Kurusu"   : {"name": "来栖りん"   , "r":157, "g":141, "b":226, "style": "button-round"},
+
+	"Nirei"    : {"name": "楡井希実"   , "r":248, "g":181, "b":  0, "style": "button-hexa"},
+	"Nonaka"   : {"name": "野中ここな" , "r": 83, "g":131, "b":195, "style": "button-hexa"},
+	"Hanamiya" : {"name": "花宮初奈"   , "r":104, "g":190, "b":141, "style": "button-hexa"},
+	"Sasaki"   : {"name": "佐々木琴子" , "r":186, "g": 38, "b": 54, "style": "button-hexa"},
+	"Sakurai"  : {"name": "櫻井陽菜"   , "r":162, "g":215, "b":221, "style": "button-hexa"},
+	"Hayama"   : {"name": "葉山風花"   , "r":250, "g":215, "b":100, "style": "button-hexa"},
+	"Miyake"   : {"name": "三宅美羽"   , "r":245, "g":100, "b": 85, "style": "button-hexa"},
+	"Shindo"   : {"name": "進藤あまね" , "r": 30, "g":190, "b":205, "style": "button-hexa"},
+
+	"Furihata" : {"name": "降幡愛"     , "r":255, "g":111, "b":190, "style": "button-hexa"},
+	"Uchida"   : {"name": "内田秀"     , "r":169, "g":158, "b":152, "style": "button-hexa"},
+	"Kobayashi": {"name": "小林愛香"   , "r":193, "g":202, "b":212, "style": "button-hexa"},
+	"Onishi"   : {"name": "大西亜玖璃" , "r":237, "g":125, "b":149, "style": "button-hexa"},
+	"Nitta"    : {"name": "新田恵海"   , "r":243, "g":133, "b":  0, "style": "button-hexa"},
+	"Okuma"    : {"name": "大熊和奏"   , "r":178, "g":255, "b":221, "style": "button-hexa"},
+	"Saito"    : {"name": "斉藤朱夏"   , "r":102, "g":192, "b":255, "style": "button-hexa"},
+	"Yumi"     : {"name": "ゆみ先生"   , "r":112, "g":112, "b":112, "style": "button-hexa"},
+	"SukiSukiClub" : {"name": "好き好きクラブの皆さん", "r":112, "g":112, "b":112, "style": "button-hexa"},
+
+	"s1" : {"name": "待機室",     "r":160, "g":128, "b":128, "style": "button-square"},
+	"s2" : {"name": "補習室",     "r":160, "g":128, "b":128, "style": "button-square"},
+	"s3" : {"name": "準備室",     "r":160, "g":128, "b":128, "style": "button-square"},
+	"s4" : {"name": "視聴覚室",   "r":160, "g":128, "b":128, "style": "button-square"},
+	"s5" : {"name": "進路相談室", "r":160, "g":128, "b":128, "style": "button-square"},
+	"s6" : {"name": "きまっし!!", "r":160, "g":128, "b":128, "style": "button-square"},
+};
+
+const filterTargets = [
+	{"name": "debug", "condition": "after:2024-07-10 max:10"},
+	{"name": "シーズン1 みらくら待機室ラジオ (全14回)", "condition": "tag:s1"},
+	{"name": "シーズン2 みらくら補習室ラジオ (全31回)", "condition": "tag:s2"},
+	{"name": "シーズン3 みらくら準備室ラジオ (全24回)", "condition": "tag:s3"},
+	{"name": "シーズン4 みらくら視聴覚室ラジオ (全13回)", "condition": "tag:s4"},
+	{"name": "シーズン5 みらくら進路相談室ラジオ (全11回)", "condition": "tag:s5"},
+	{"name": "シーズン6 きまっし!!みらぱ！の部屋ラジオ", "condition": "tag:s6"},
+];
+
+const LLSPLayoutTemplate = (entry) => {
+    const videoLength = (typeof entry['length'] === 'number' && entry['length'] >= 0 ? `<span class="length pc-only">動画：${convertSecondsToHHMMSS(entry['length'])}</span>` : '');
+    const videoContent = ('tube' in entry && entry['tube'] ? `${LLSProcessor.getYouTubeLink(entry['tube'], entry['title'])}${videoLength}` : '');
+    const descContent = (typeof entry['desc'] === 'string' && entry['desc'] !== "" ? convertMarkup(entry['desc']) : '');
+	const memoContent = (typeof entry['memo'] === 'string' && entry['memo'] !== "" ? convertMarkup(entry['memo']) : '');
+	const progContent = (typeof entry['program'] == 'object' && entry['program'].length ? convertMarkup(`{{EL::配信内容（クリックで展開）::{{UL::${entry['program'].join("::")}}}}}`) : '');
+    const tagsContent = entry['tags'].map(tag => (tag in tagData ? createStyledTag(tagData[tag], tag) : '')).join('');
+	
+	return `<article>
+		<div class="article-box-date">${entry['date']}</div>
+		<div class="article-box-title">${entry['title']}</div>
+		<div class="article-box-tube">${videoContent}</div>
+		<div class="article-box-desc">${descContent ? `<div class="desc">${descContent}</div>` : ''}${memoContent}${progContent}</div>
+		<div class="article-box-tags">${tagsContent}</div>
+	</article>`;
+}
+--></script>
+<script src="data/loader.js" data-src="data/hasu-radio.json,data/common-library.js,module/LLS-processor.js"></script>
+</head>
+<body class="left">
+<main>
+	<header>
+		<h1 id="TitleName">蓮ノ空 みらくらラジオまとめ</h1>
+		<nav class="right-menu">
+			<ul>
+				<li><strong>目次</strong></li>
+				<li><hr></li>
+				<li><a href="#Summary">概要</a></li>
+				<li><a href="#VideoList">動画一覧</a></li>
+				<li><a href="#History">更新履歴</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="Summary">
+		<h2>概要</h2>
+		<p>
+			YouTubeの蓮ノ空女学院スクールアイドルクラブ公式チャンネルで連載されている「みらくら○○室ラジオ」動画のまとめです。
+		</p>
+	</section>
+
+	<section id="VideoList">
+		<h2>動画一覧</h2>
+		<p>下部のプルダウンメニューから絞り込み条件を選択すると、条件に合致する配信の情報が表示されます。
+		</p>
+		<div id="Filter-Container">
+			<label for="LLSP-Filter">絞り込み</label>
+			<select id="LLSP-Filter">
+				<option value="">(期間を選択)</option>
+			</select>
+		</div>
+		<div id="LLSP-Result" class="output-box output-box-default">
+			このページでは、情報を表示するためにJavaScriptを使用します。<br>
+			いつまで待ってもこの表示が消えない場合、JavaScriptがオフになっている可能性があります。<br>
+			お手数ですが、JavaScriptの実行を許可した上でページを再読み込みしてください。<br>
+		</div>
+	</section>
+
+	<section id="History">
+		<h2>更新履歴（動画一覧への掲載以外）</h2>
+		<p>下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
+		<div class="history-container">
+			<details open>
+				<summary><span class="date">2025/05/04</span> - </summary>
+				<div>
+					<span class="icon-new"></span>シーズン6「きまっし！みらぱの部屋ラジオ」を追加
+				</div>
+			</details>
+			<details>
+				<summary class="important"><span class="date">2025/01/22</span> - 公開</summary>
+				<div>
+					<span class="icon-new"></span>公開
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<footer>
+		<nav>
+			<a id="BackToMain" href="index.html">トップページに戻る。</a>
+		</nav>
+	</footer>
+</main>
+</body>
+</html>

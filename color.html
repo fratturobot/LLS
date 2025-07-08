@@ -82,6 +82,15 @@
 <main>
 	<header>
 		<h1 id="TitleName" data-localize="COLOR_PAGE_TITLE">ラブライブ！シリーズ メンバーカラーまとめ</h1>
+	</header>
+
+	<section id="Summary">
+		<h2 data-localize="SUMMARY_HEADER">概要</h2>
+		<p data-localize="COLOR_SUMMARY">
+			「ラブライブ！」シリーズにおいて、各所で使われているメンバーカラーのまとめです。<br>
+			PCで閲覧している場合、Ctrlキーを押しながらRGB値やカラーコードの部分をクリックすると、それをクリップボードにコピーできます。<br>
+			このページではRGBでの抽出が可能なデジタルカラーのみを扱っています。
+		</p>
 		<nav class="right-menu">
 			<div class="localize-wrapper">
 				<select id="LanguageSelector"></select>
@@ -99,30 +108,22 @@
 					<li><a href="#Color_Hasu" data-localize="HASU">蓮ノ空</a></li>
 					<li><a href="#Color_Musical" data-localize="MUSICAL">ミュージカル</a></li>
 					<li><a href="#Color_Yohane" data-localize="YOHANE">幻日のヨハネ</a></li>
+					<li><a href="#Color_BlueBird" data-localize="BLUEBIRD">イキヅライブ！</a></li>
 				</ul></li>
-				<li><a href="#References" data-localize="REFERENCES">出典一覧</a></li>
-				<li><a href="#History" data-localize="UPDATE">更新履歴</a></li>
+			<li><a href="#References" data-localize="REFERENCES">出典一覧</a></li>
+			<li><a href="#History" data-localize="UPDATE">更新履歴</a></li>
 			</ul>
 		</nav>
-	</header>
-
-	<section id="Summary">
-		<h2 data-localize="SUMMARY_HEADER">概要</h2>
-		<p data-localize="COLOR_SUMMARY">
-			「ラブライブ！」シリーズにおいて、各所で使われているメンバーカラーのまとめです。<br>
-			PCで閲覧している場合、Ctrlキーを押しながらRGB値やカラーコードの部分をクリックすると、それをクリップボードにコピーできます。<br>
-			このページではRGBでの抽出が可能なデジタルカラーのみを扱っています。
-		</p>
 	</section>
 
 	<section id="ColorList">
-		<h2 class="foreword" data-localize="COLOR_LIST">メンバーカラー一覧</h2>
+		<h2 data-localize="COLOR_LIST">メンバーカラー一覧</h2>
 		<p data-localize="COLOR_LIST_NOTE">
 			各表は上下左右にスクロールできます。
 		</p>
 		<section id="Color_Muse">
 			<h3>μ’s</h3>
-			<div class="output-box darkbg" id="TableMuse" style="max-height: 700px"></div>
+			<div class="output-box darkbg" id="TableMuse" style="max-height: 630px"></div>
 		</section>
 
 		<section id="Color_Aqours">
@@ -137,12 +138,12 @@
 
 		<section id="Color_Liella">
 			<h3>Liella!</h3>
-			<div class="output-box darkbg" id="TableLiella"></div>
+			<div class="output-box darkbg" id="TableLiella" style="max-height: 690px"></div>
 		</section>
 
 		<section id="Color_Hasu">
 			<h3>蓮ノ空女学院スクールアイドルクラブ</h3>
-			<div class="output-box darkbg" id="TableHasu" style="max-height: 280px"></div>
+			<div class="output-box darkbg" id="TableHasu" style="max-height: 400px"></div>
 		</section>
 
 		<section id="Color_Musical">
@@ -153,6 +154,11 @@
 		<section id="Color_Yohane">
 			<h3>幻日のヨハネ</h3>
 			<div class="output-box darkbg" id="TableYohane" style="max-height: 180px"></div>
+		</section>
+		
+		<section id="Color_BlueBird">
+			<h3>イキヅライブ！</h3>
+			<div class="output-box darkbg" id="TableBlueBird" style="max-height: 240px"></div>
 		</section>
 	</section>
 
@@ -166,12 +172,36 @@
 		<p data-localize="UPDATE_INFO">下のボックス内の、色つきの日付の行をクリックすると詳しい情報が表示されます。</p>
 		<div class="history-container">
 			<details open>
-				<summary><span class="date">2024/02/10</span> - Add Translation</summary>
+				<summary><span class="date">2025/07/07</span> - Add Translation</summary>
 				<div>
 					<span class="new"></span>Added English translation of page.
 				</div>
 			</details>
 			<details open>
+				<summary><span class="date">2025/05/12</span> - 「イキヅライブ！」対応</summary>
+				<div>
+					<span class="icon-new"></span>「イキヅライブ！ LOVELIVE BLUEBIRD」の表を追加
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2025/04/11</span> - 蓮ノ空105期新入生参戦に伴う調整</summary>
+				<div>
+					<span class="icon-new"></span>「セラス 柳田 リリエンフェルト」「桂城泉」の列を追加
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/08/17</span> - データの不備修正</summary>
+				<div>
+					<span class="icon-new"></span>「高咲侑」の列の欠落を修正
+				</div>
+			</details>
+			<details>
+				<summary><span class="date">2024/04/14</span> - 蓮ノ空104期新入生参戦に伴う調整</summary>
+				<div>
+					<span class="icon-new"></span>「百生吟子」「徒町小鈴」「安養寺姫芽」の列を追加
+				</div>
+			</details>
+			<details>
 				<summary class="important"><span class="date">2024/01/29</span> - リニューアル</summary>
 				<div>
 					<span class="icon-new"></span>CSSをアップデート<br>
