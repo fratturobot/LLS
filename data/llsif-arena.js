@@ -169,29 +169,30 @@ function WriteMessage(page) {
 	document.getElementById("message-box").scrollTop = 0;
 	
 	//左ボタンの設定変更
-	if(page > 0) {
+	const selectedOption = document.querySelector(`#select-box option[value="${page}"]`);
+	if(selectedOption.previousSibling) {
 		document.getElementById('ButtonLeft').classList.add('button-enable');
 		document.getElementById('ButtonLeft').classList.remove('button-disable');
-		document.getElementById('ButtonLeft').setAttribute('onclick', `WriteMessage(${page-1})`);
+		document.getElementById('ButtonLeft').onclick = () => WriteMessage(selectedOption.previousSibling.value);
 	} else {
 		document.getElementById('ButtonLeft').classList.add('button-disable');
 		document.getElementById('ButtonLeft').classList.remove('button-enable');
-		document.getElementById('ButtonLeft').onclick = '';
+		document.getElementById('ButtonLeft').onclick = null;
 	}
 
 	//右ボタンの設定変更
-	if(page < window['JSON-llsif-arena'].length-1) {
+	if(selectedOption.nextSibling) {
 		document.getElementById('ButtonRight').classList.add('button-enable');
 		document.getElementById('ButtonRight').classList.remove('button-disable');
-		document.getElementById('ButtonRight').setAttribute('onclick', `WriteMessage(${page+1})`);
+		document.getElementById('ButtonRight').onclick = () => WriteMessage(selectedOption.nextSibling.value);
 	} else {
 		document.getElementById('ButtonRight').classList.add('button-disable');
 		document.getElementById('ButtonRight').classList.remove('button-enable');
-		document.getElementById('ButtonRight').onclick = '';
+		document.getElementById('ButtonRight').onclick = null;
 	}
 	
 	//セレクトボックスの位置変更
-	document.getElementById("select-box").selectedIndex = page;
+	document.getElementById("select-box").value = page;
 }
 
 //■「キャラ別登場回数」の描画
